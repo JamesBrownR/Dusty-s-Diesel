@@ -76,9 +76,15 @@
         }
         
         /* Gallery image hover effect */
-        .gallery-card img:hover {
-            @apply transform scale-110;
-        }
+       /* Gallery image hover effect */
+.gallery-card img {
+    cursor: pointer;
+}
+
+.gallery-card img:hover {
+    @apply transform scale-110;
+    filter: brightness(1.1);
+}
         
         /* Scrollbar styling (optional but adds polish) */
         ::-webkit-scrollbar {
@@ -193,6 +199,43 @@ nav a[href*="/"]:hover::after {
 .gallery-card:hover {
     border-color: var(--brand-red);
 }
+        /* Lightbox modal styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--brand-red);
+}
 
 /* Footer social icons hover */
 footer a i {
@@ -280,49 +323,49 @@ footer a:hover i {
         </section>
         
         <!-- Services Overview -->
-        <section id="services" class="py-16 sm:py-24 bg-gray-900 animate-on-scroll">
-            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-base font-semibold text-brand-red uppercase tracking-wide">Our Expertise</h2>
-                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">SPECIALIZING IN ALL THINGS DIESEL</p>
-                </div>
-                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Service 1 -->
-                    <div class="service-card">
-                        <div class="p-8">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-red text-white">
-                                <i class="fa-solid fa-gauge-high h-6 w-6"></i>
-                            </div>
-                            <h3 class="mt-6 text-xl font-bold text-white">Performance Tuning</h3>
-                            <p class="mt-4 text-base text-gray-400">Unleash the full potential of your truck with our expert ECU tuning and performance upgrades.</p>
-                            <a href="services.html#tuning" class="mt-6 inline-block text-brand-red font-medium hover:text-opacity-80 transition-colors">Learn More &rarr;</a>
-                        </div>
+       <section id="services" class="py-24 sm:py-32 bg-gray-900 animate-on-scroll">
+    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-xl font-semibold text-brand-red uppercase tracking-wide">Our Expertise</h2>
+            <p class="mt-4 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">SPECIALIZING IN ALL THINGS DIESEL</p>
+        </div>
+        <div class="mt-20 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="p-10">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-md bg-brand-red text-white">
+                        <i class="fa-solid fa-gauge-high text-3xl"></i>
                     </div>
-                    <!-- Service 2 -->
-                    <div class="service-card">
-                        <div class="p-8">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-red text-white">
-                                <i class="fa-solid fa-truck-monster h-6 w-6"></i>
-                            </div>
-                            <h3 class="mt-6 text-xl font-bold text-white">Engine Repair & Builds</h3>
-                            <p class="mt-4 text-base text-gray-400">From diagnostics and head gaskets to full custom engine builds, we handle it all.</p>
-                            <a href="engines.html" class="mt-6 inline-block text-brand-red font-medium hover:text-opacity-80 transition-colors">Our Engines &rarr;</a>
-                        </div>
-                    </div>
-                    <!-- Service 3 -->
-                    <div class="service-card">
-                        <div class="p-8">
-                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-red text-white">
-                                <i class="fa-solid fa-oil-can h-6 w-6"></i>
-                            </div>
-                            <h3 class="mt-6 text-xl font-bold text-white">General Maintenance</h3>
-                            <p class="mt-4 text-base text-gray-400">Keep your diesel running strong with routine oil changes, filter replacements, and inspections.</p>
-                            <a href="services.html#maintenance" class="mt-6 inline-block text-brand-red font-medium hover:text-opacity-80 transition-colors">Learn More &rarr;</a>
-                        </div>
-                    </div>
+                    <h3 class="mt-8 text-2xl font-bold text-white">Performance Tuning</h3>
+                    <p class="mt-6 text-lg text-gray-400">Unleash the full potential of your truck with our expert ECU tuning and performance upgrades.</p>
+                    <a href="services.html#tuning" class="mt-8 inline-block text-brand-red text-lg font-medium hover:text-opacity-80 transition-colors">Learn More &rarr;</a>
                 </div>
             </div>
-        </section>
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="p-10">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-md bg-brand-red text-white">
+                        <i class="fa-solid fa-truck-monster text-3xl"></i>
+                    </div>
+                    <h3 class="mt-8 text-2xl font-bold text-white">Engine Repair & Builds</h3>
+                    <p class="mt-6 text-lg text-gray-400">From diagnostics and head gaskets to full custom engine builds, we handle it all.</p>
+                    <a href="engines.html" class="mt-8 inline-block text-brand-red text-lg font-medium hover:text-opacity-80 transition-colors">Our Engines &rarr;</a>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="p-10">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-md bg-brand-red text-white">
+                        <i class="fa-solid fa-oil-can text-3xl"></i>
+                    </div>
+                    <h3 class="mt-8 text-2xl font-bold text-white">General Maintenance</h3>
+                    <p class="mt-6 text-lg text-gray-400">Keep your diesel running strong with routine oil changes, filter replacements, and inspections.</p>
+                    <a href="services.html#maintenance" class="mt-8 inline-block text-brand-red text-lg font-medium hover:text-opacity-80 transition-colors">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Why Choose Us -->
         <section class="py-16 sm:py-24 bg-brand-dark animate-on-scroll">
@@ -557,18 +600,60 @@ const galleryImages = [
             const card = document.createElement('div');
             card.className = 'gallery-card relative group';
             
-           card.innerHTML = `
+   card.innerHTML = `
     <div class="overflow-hidden rounded-lg">
-        <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
-    </div>
-    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-start justify-center">
-        <p class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 pt-6 text-center">${image.alt}</p>
+        <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-all duration-500 ease-in-out group-hover:scale-110 cursor-pointer">
     </div>
 `;
             galleryContainer.appendChild(card);
         });
     }
-    
+
+    // Create lightbox modal
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="">
+        `;
+        document.body.appendChild(lightbox);
+
+        const lightboxImg = lightbox.querySelector('img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+        // Add click event to all gallery images
+        galleryContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'IMG') {
+                lightbox.classList.add('active');
+                lightboxImg.src = e.target.src;
+                lightboxImg.alt = e.target.alt;
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+                          
     // --- Dynamic Review Population ---
     const reviewsContainer = document.getElementById('reviews-container');
     const showMoreBtn = document.getElementById('show-more-reviews');
