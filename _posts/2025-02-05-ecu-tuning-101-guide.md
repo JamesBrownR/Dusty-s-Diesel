@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ECU Tuning 101: Unlock Your Diesel's True Potential"
-image: /Pics/blogs/ecu-tuning.webp
+image: /blogs/enginetune.webp
 description: "Learn how ECU tuning can transform your diesel truck's performance, fuel economy, and drivability."
 ---
 ## ECU Tuning 101: Unlock Your Diesel's True Potential
