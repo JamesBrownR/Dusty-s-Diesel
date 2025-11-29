@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Why Dyno Tuning Beats Canned Tunes Every Time"
-image: /blogs/dyno2.webp
+image: /blog/dyno2.webp
 description: "Detailed comparison showing the value of professional dyno tuning versus off-the-shelf tunes for your diesel."
 ---
 
