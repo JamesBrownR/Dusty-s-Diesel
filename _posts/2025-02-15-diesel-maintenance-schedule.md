@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Essential Diesel Maintenance Schedule Every Owner Should Follow"
-image: /blogs/cleanengine.webp
+image: /blog/cleanengine.webp
 description: "Keep your diesel running strong for 300,000+ miles with this comprehensive maintenance guide from the experts."
 ---
 ## The Essential Diesel Maintenance Schedule Every Owner Should Follow
