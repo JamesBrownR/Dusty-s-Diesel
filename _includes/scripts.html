@@ -1,28 +1,33 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-       // --- Logo Size on Scroll ---
-    const headerLogo = document.getElementById('header-logo');
-    const headerText = document.getElementById('header-text');
+       // --- Header and Logo Size on Scroll ---
+const header = document.getElementById('header');
+const navContainer = document.getElementById('nav-container');
+const headerLogo = document.getElementById('header-logo');
+const headerText = document.getElementById('header-text');
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
     
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        
-        if (scrollPosition < 50) {
-            // At the top - make logo bigger
-            headerLogo.classList.remove('h-12');
-            headerLogo.classList.add('h-16', 'md:h-20');
-            headerText.classList.remove('text-xl');
-            headerText.classList.add('text-2xl', 'md:text-3xl');
-        } else {
-            // Scrolled down - normal size
-            headerLogo.classList.remove('h-16', 'md:h-20');
-            headerLogo.classList.add('h-12');
-            headerText.classList.remove('text-2xl', 'md:text-3xl');
-            headerText.classList.add('text-xl');
-        }
-    });
-    
+    if (scrollPosition < 50) {
+        // At the top - make entire header and logo bigger
+        navContainer.classList.remove('h-20');
+        navContainer.classList.add('h-28', 'md:h-32');
+        headerLogo.classList.remove('h-12');
+        headerLogo.classList.add('h-16', 'md:h-24');
+        headerText.classList.remove('text-xl');
+        headerText.classList.add('text-2xl', 'md:text-4xl');
+    } else {
+        // Scrolled down - normal size
+        navContainer.classList.remove('h-28', 'md:h-32');
+        navContainer.classList.add('h-20');
+        headerLogo.classList.remove('h-16', 'md:h-24');
+        headerLogo.classList.add('h-12');
+        headerText.classList.remove('text-2xl', 'md:text-4xl');
+        headerText.classList.add('text-xl');
+    }
+});
     // --- Animate on Scroll (IntersectionObserver) ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
     
