@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What Is a DPF Delete? Full Breakdown"
-image: /blog/DPF.webp
+image: {{ site.baseurl }}/blog/DPF.webp
 description: "Understanding what a DPF delete is, how it works, and why it’s used in off-road diesel applications."
 ---
 
