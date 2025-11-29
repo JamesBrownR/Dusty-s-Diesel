@@ -96,7 +96,7 @@
         }
 
         .bg-black {
-            padding: 0 0 0 3rem;
+            padding: 0 0 3rem 0;
             background-color: black;
         }
 
@@ -618,12 +618,12 @@
                             <div class="ml-4">
                                 <h4 class="text-lg font-bold text-white">${review.name}</h4>
                                 <div class="flex items-center text-sm text-gray-400">
-                                    ${renderStars(review.stars)}
-                                    <span class="ml-2">${review.stars} Stars</span>
+                                    ${renderStars(review.rating)}
+                                    <span class="ml-2">${review.rating} Stars</span>
                                 </div>
                             </div>
                         </div>
-                        <p class="text-gray-300 italic">"${review.text}"</p>
+                        <p class="text-gray-300 italic">"${review.body}"</p>
                     `;
                     reviewsContainer.appendChild(card);
                 });
