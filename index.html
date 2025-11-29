@@ -1,1 +1,518 @@
 
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dusty's Diesel - Expert Diesel Performance & Repair in Davis, OK</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (for review stars and icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Base styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* Very dark gray, almost black */
+            color: #e5e7eb; /* Light gray text */
+        }
+
+        /* Custom brand colors from the logo */
+        :root {
+            --brand-red: #d11d27; /* Extracted from logo */
+            --brand-dark: #0a0a0a;
+        }
+
+        /* Configure Tailwind to use our brand color */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-red': 'var(--brand-red)',
+                        'brand-dark': 'var(--brand-dark)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+
+        /* Hero section background image */
+        .hero-section {
+            /* Using a placeholder for a dramatic diesel engine/truck shot */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/222/FFF?text=Hero+Image+Here');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom focus rings for accessibility */
+        .focus-ring {
+            @apply focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 focus:ring-offset-brand-dark;
+        }
+        
+        /* Glassmorphism effect for the sticky nav */
+        .glass-nav {
+            background-color: rgba(10, 10, 10, 0.75); /* brand-dark at 75% opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Card styles */
+        .service-card, .gallery-card, .review-card {
+            @apply bg-gray-900 border border-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300;
+        }
+        .service-card:hover {
+            @apply transform -translate-y-1 shadow-2xl shadow-brand-red/20;
+        }
+        
+        /* Gallery image hover effect */
+        .gallery-card img:hover {
+            @apply transform scale-110;
+        }
+        
+        /* Scrollbar styling (optional but adds polish) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827; /* gray-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-red);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e11d48; /* rose-600 for a slightly brighter hover */
+        }
+
+    </style>
+</head>
+<body class="bg-brand-dark">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="glass-nav sticky top-0 z-50">
+        <nav class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 focus-ring rounded-md">
+                    <img class="h-12 w-auto" src="Dusty-s-Diesel.png" alt="Dusty's Diesel Logo"
+                         onerror="this.onerror=null; this.src='https://placehold.co/200x100/0a0a0a/d11d27?text=Dusty%27s+Diesel';">
+                    <!-- Text hidden on small screens, shown on md and up -->
+                    <span class="text-xl font-bold text-gray-100 hidden sm:inline">DUSTY'S DIESEL</span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex md:items-center md:space-x-4">
+                    <a href="index.html" class="text-brand-red font-semibold px-3 py-2 rounded-md text-sm uppercase tracking-wider">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-colors focus-ring">About</a>
+                    <a href="services.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-colors focus-ring">Services</a>
+                    <a href="engines.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-colors focus-ring">Engines</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider transition-colors focus-ring">Contact</a>
+                    <a href="tel:+19189733545" class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-brand-red hover:bg-opacity-80 transition-colors focus-ring">
+                        <i class="fa-solid fa-phone -ml-1 mr-2 h-4 w-4"></i>
+                        Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-red" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i id="menu-icon-open" class="fa-solid fa-bars h-6 w-6 block"></i>
+                        <i id="menu-icon-close" class="fa-solid fa-xmark h-6 w-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-brand-red bg-gray-900 block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wider">Home</a>
+                <a href="about.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wider transition-colors">About</a>
+                <a href="services.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wider transition-colors">Services</a>
+                <a href="engines.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wider transition-colors">Engines</a>
+                <a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium uppercase tracking-wider transition-colors">Contact</a>
+                 <a href="tel:+19189733545" class="mt-2 block w-full text-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-brand-red hover:bg-opacity-80 transition-colors focus-ring">
+                    <i class="fa-solid fa-phone mr-2"></i>
+                    Call +1 (918) 973-3545
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section h-[70vh] min-h-[450px] flex items-center justify-center text-center">
+            <div class="px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tighter shadow-black/50" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+                    EXPERT DIESEL PERFORMANCE & REPAIR
+                </h1>
+                <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-200" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">
+                    From routine maintenance to full custom builds, Dusty's Diesel is your trusted partner in Davis, OK.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="services.html" class="inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus-ring">
+                        Our Services
+                    </a>
+                    <a href="contact.html" class="inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg text-gray-900 bg-gray-100 hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 focus-ring">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Overview -->
+        <section id="services" class="py-16 sm:py-24 bg-gray-900">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-brand-red uppercase tracking-wide">Our Expertise</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">SPECIALIZING IN ALL THINGS DIESEL</p>
+                </div>
+                <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="p-8">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-red text-white">
+                                <i class="fa-solid fa-gauge-high h-6 w-6"></i>
+                            </div>
+                            <h3 class="mt-6 text-xl font-bold text-white">Performance Tuning</h3>
+                            <p class="mt-4 text-base text-gray-400">Unleash the full potential of your truck with our expert ECU tuning and performance upgrades.</p>
+                            <a href="services.html#tuning" class="mt-6 inline-block text-brand-red font-medium hover:text-opacity-80 transition-colors">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="p-8">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-red text-white">
+                                <i class="fa-solid fa-truck-monster h-6 w-6"></i>
+                            </div>
+                            <h3 class="mt-6 text-xl font-bold text-white">Engine Repair & Builds</h3>
+                            <p class="mt-4 text-base text-gray-400">From diagnostics and head gaskets to full custom engine builds, we handle it all.</p>
+                            <a href="engines.html" class="mt-6 inline-block text-brand-red font-medium hover:text-opacity-80 transition-colors">Our Engines &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="p-8">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-brand-red text-white">
+                                <i class="fa-solid fa-oil-can h-6 w-6"></i>
+                            </div>
+                            <h3 class="mt-6 text-xl font-bold text-white">General Maintenance</h3>
+                            <p class="mt-4 text-base text-gray-400">Keep your diesel running strong with routine oil changes, filter replacements, and inspections.</p>
+                            <a href="services.html#maintenance" class="mt-6 inline-block text-brand-red font-medium hover:text-opacity-80 transition-colors">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-16 sm:py-24 bg-brand-dark">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            Your Local, Trusted Diesel Specialist.
+                        </h2>
+                        <p class="mt-6 text-lg text-gray-400">
+                            At Dusty's Diesel, we're more than just a repair shop; we're enthusiasts. Owner Dusty and the team are dedicated to providing honest, high-quality workmanship for every truck that rolls into our bay. We treat your vehicle like it's our own.
+                        </p>
+                        <div class="mt-8">
+                            <dl class="space-y-6">
+                                <div>
+                                    <dt class="text-lg font-semibold text-white">Expert Technicians</dt>
+                                    <dd class="mt-1 text-base text-gray-400">Years of hands-on experience with all major diesel engines.</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-lg font-semibold text-white">Quality Parts</dt>
+                                    <dd class="mt-1 text-base text-gray-400">We use only trusted, high-quality parts for repairs and upgrades.</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-lg font-semibold text-white">Customer Focused</dt>
+                                    <dd class="mt-1 text-base text-gray-400">We believe in clear communication and fair pricing. No surprises.</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <a href="about.html" class="mt-10 inline-block px-6 py-3 text-base font-semibold rounded-md shadow-lg text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus-ring">
+                            Meet the Team
+                        </a>
+                    </div>
+                    <div class="mt-12 lg:mt-0">
+                        <img class="rounded-lg shadow-2xl w-full h-auto" src="https://placehold.co/600x450/333/FFF?text=Dusty's+Shop+Photo" alt="Dusty's Diesel shop front or inside view">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-16 sm:py-24 bg-gray-900">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">OUR WORK</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        Check out some of the recent projects and custom builds from our shop.
+                    </p>
+                </div>
+                <!-- Gallery grid will be populated by JavaScript -->
+                <div id="gallery-grid" class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- Gallery items will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="reviews" class="py-16 sm:py-24 bg-brand-dark">
+            <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">WHAT OUR CUSTOMERS SAY</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        We're proud of our 4.4-star rating from 27+ reviews!
+                    </p>
+                </div>
+                <!-- Reviews container will be populated by JavaScript -->
+                <div id="reviews-container" class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-2">
+                    <!-- Review cards will be injected here -->
+                </div>
+                <div class="text-center mt-12">
+                     <a href="https://www.google.com/maps/place/Dusty's+Diesel/@34.4906295,-97.1131514,17z/data=!4m18!1m9!3m8!1s0x87b2d9c3297d8f13:0x29401e1d5055961b!2sDusty's+Diesel!8m2!3d34.4906921!4d-97.1134338!9m1!1b1!16s%2Fg%2F11gtg8_bc4!3m7!1s0x87b2d9c3297d8f13:0x29401e1d5055961b!8m2!3d34.4906921!4d-97.1134338!9m1!1b1!16s%2Fg%2F11gtg8_bc4?entry=ttu" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-brand-red hover:text-opacity-80 transition-colors">
+                        Read all 27+ reviews on Google &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Location & Hours Section -->
+        <section id="location" class="py-16 sm:py-24 bg-gray-900">
+            <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">VISIT THE SHOP</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        We're located on W. McKee Industrial Rd. Come on by!
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Hours & Info -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-white mb-6">Shop Info</h3>
+                        <div class="space-y-4 text-lg">
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-location-dot h-6 w-6 text-brand-red mr-4 mt-1"></i>
+                                <div>
+                                    <span class="font-semibold text-white">Address</span><br>
+                                    <a href="https://maps.google.com/?q=8305+W.+McKee+Industrial+Rd,+Davis,+OK+73030" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-brand-red transition-colors">
+                                        8305 W. McKee Industrial Rd<br>Davis, OK 73030
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fa-solid fa-phone h-6 w-6 text-brand-red mr-4 mt-1"></i>
+                                <div>
+                                    <span class="font-semibold text-white">Phone</span><br>
+                                    <a href="tel:+19189733545" class="text-gray-300 hover:text-brand-red transition-colors">+1 (918) 973-3545</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-white mt-8 mb-4">Business Hours</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li class="flex justify-between"><span class="font-medium text-gray-200">Monday:</span> <span>8:00 AM – 6:00 PM</span></li>
+                            <li class="flex justify-between"><span class="font-medium text-gray-200">Tuesday:</span> <span>8:00 AM – 6:00 PM</span></li>
+                            <li class="flex justify-between"><span class="font-medium text-gray-200">Wednesday:</span> <span>8:00 AM – 4:00 PM</span></li>
+                            <li class="flex justify-between"><span class="font-medium text-gray-200">Thursday:</span> <span>8:00 AM – 6:00 PM</span></li>
+                            <li class="flex justify-between"><span class="font-medium text-gray-200">Friday:</span> <span>8:00 AM – 5:00 PM</span></li>
+                            <li class="flex justify-between"><span class="font-medium text-gray-500">Saturday:</span> <span class="text-gray-500">Closed</span></li>
+                            <li class="flex justify-between"><span class="font-medium text-gray-500">Sunday:</span> <span class="text-gray-500">Closed</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Google Map -->
+                    <div class="rounded-lg overflow-hidden shadow-lg h-[450px] md:h-auto">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.4833125715345!2d-97.11315139999999!3d34.4906295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b2d9c3297d8f13%3A0x29401e1d5055961b!2sDusty&#39;s%20Diesel!5e0!3m2!1sen!2sus!4v1764380203817!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="container mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center mb-8">
+                <img class="h-16 w-auto" src="Dusty-s-Diesel.png" alt="Dusty's Diesel Logo"
+                     onerror="this.onerror=null; this.src='https://placehold.co/200x100/0a0a0a/d11d27?text=Dusty%27s+Diesel';">
+            </div>
+            <nav class="flex flex-wrap justify-center -mx-5 -my-2" aria-label="Footer">
+                <div class="px-5 py-2">
+                    <a href="index.html" class="text-base text-gray-400 hover:text-white transition-colors">Home</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="about.html" class="text-base text-gray-400 hover:text-white transition-colors">About</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="services.html" class="text-base text-gray-400 hover:text-white transition-colors">Services</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="engines.html" class="text-base text-gray-400 hover:text-white transition-colors">Engines</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="contact.html" class="text-base text-gray-400 hover:text-white transition-colors">Contact</a>
+                </div>
+            </div >
+            <div class="mt-8 flex justify-center space-x-6">
+                <!-- Add social links when available -->
+                 <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <span class="sr-only">Facebook</span>
+                    <i class="fa-brands fa-facebook-f h-6 w-6"></i>
+                </a>
+                 <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <span class="sr-only">Instagram</span>
+                    <i class="fa-brands fa-instagram h-6 w-6"></i>
+                </a>
+                 <a href="https://www.yelp.com/biz/dustys-diesel-davis" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-300">
+                    <span class="sr-only">Yelp</span>
+                    <i class="fa-brands fa-yelp h-6 w-6"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-center text-base text-gray-500">
+                &copy; 2025 Dusty's Diesel. All rights reserved.
+            </p>
+            <p class="mt-2 text-center text-sm text-gray-600">
+                8305 W. McKee Industrial Rd, Davis, OK 73030 | +1 (918) 973-3545
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript for Mobile Menu and Dynamic Content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- Mobile Menu Toggle ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+            
+            // --- Dynamic Gallery Population ---
+            const galleryContainer = document.getElementById('gallery-grid');
+            const galleryImages = [
+                { src: 'https://placehold.co/600x400/111/FFF?text=Engine+Build', alt: 'Custom diesel engine build' },
+                { src: 'https://placehold.co/600x400/222/FFF?text=Truck+on+Lift', alt: 'Truck on a service lift' },
+                { src: 'https://placehold.co/600x400/111/FFF?text=Tuning+Setup', alt: 'Performance tuning setup' },
+                { src: 'https://placehold.co/600x400/222/FFF?text=Finished+Project', alt: 'Finished custom truck project' },
+                { src: 'https://placehold.co/600x400/222/FFF?text=Suspension+Work', alt: 'Suspension upgrade' },
+                { src: 'https://placehold.co/600x400/111/FFF?text=Welding+Fabrication', alt: 'Custom fabrication work' },
+                { src: 'https://placehold.co/600x400/222/FFF?text=Turbo+Install', alt: 'Turbo installation' },
+                { src: 'https://placehold.co/600x400/111/FFF?text=Shop+Interior', alt: 'Inside the shop' },
+            ];
+
+            if (galleryContainer) {
+                galleryImages.forEach(image => {
+                    const card = document.createElement('div');
+                    card.className = 'gallery-card relative group';
+                    
+                    card.innerHTML = `
+                        <div class="overflow-hidden rounded-lg">
+                            <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                        </div>
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                            <p class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">${image.alt}</p>
+                        </div>
+                    `;
+                    galleryContainer.appendChild(card);
+                });
+            }
+            
+            // --- Dynamic Review Population ---
+            const reviewsContainer = document.getElementById('reviews-container');
+            const reviews = [
+                { 
+                    name: 'Cody T.', 
+                    stars: 5, 
+                    text: "Dusty is the man! He knows his stuff and got my truck running better than ever. Fair pricing and honest work. Won't take my diesel anywhere else." 
+                },
+                { 
+                    name: 'Brian S.', 
+                    stars: 5, 
+                    text: "Top-notch service. Had a complex electrical issue that other shops couldn't figure out. Dusty diagnosed and fixed it in a day. Highly recommend." 
+                },
+                { 
+                    name: 'Mark R.', 
+                    stars: 4, 
+                    text: "Good, solid work. They did a full service and replaced my injectors. Price was what they quoted. My only wish is that they had weekend hours, but the quality of work is worth it." 
+                },
+                { 
+                    name: 'Jessica L.', 
+                    stars: 5, 
+                    text: "As a woman, I'm always wary of auto shops. Dusty and his team were respectful, explained everything clearly, and didn't try to upsell me. 10/10 experience." 
+                }
+            ];
+            
+            // Helper function to render star icons
+            function renderStars(rating) {
+                let starsHTML = '';
+                const fullStars = Math.floor(rating);
+                const halfStar = rating % 1 !== 0;
+                
+                for(let i = 0; i < fullStars; i++) {
+                    starsHTML += '<i class="fa-solid fa-star text-yellow-400"></i>';
+                }
+                if (halfStar) {
+                    starsHTML += '<i class="fa-solid fa-star-half-stroke text-yellow-400"></i>';
+                }
+                const emptyStars = 5 - Math.ceil(rating);
+                for(let i = 0; i < emptyStars; i++) {
+                    starsHTML += '<i class="fa-regular fa-star text-yellow-400"></i>';
+                }
+                return starsHTML;
+            }
+
+            if (reviewsContainer) {
+                reviews.forEach(review => {
+                    const card = document.createElement('div');
+                    card.className = 'review-card p-8';
+                    
+                    card.innerHTML = `
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center text-white text-xl font-bold">
+                                ${review.name.charAt(0)}
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-white">${review.name}</h4>
+                                <div class="flex items-center text-sm text-gray-400">
+                                    ${renderStars(review.stars)}
+                                    <span class="ml-2">${review.stars} Stars</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 italic">"${review.text}"</p>
+                    `;
+                    reviewsContainer.appendChild(card);
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>
