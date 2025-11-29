@@ -101,7 +101,90 @@
             padding: 0 0 3rem 0;
             background-color: black;
         }
+/* Navigation link hover effect with underline */
+nav a[href*=".html"] {
+    position: relative;
+}
 
+nav a[href*=".html"]::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--brand-red);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a[href*=".html"]:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Service card icon animation */
+.service-card .fa-solid {
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .fa-solid {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Service card "Learn More" arrow animation */
+.service-card a {
+    position: relative;
+    display: inline-block;
+}
+
+.service-card a::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: right 0.3s ease;
+}
+
+.service-card:hover a {
+    padding-right: 8px;
+}
+
+/* Section fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Gallery card red border on hover */
+.gallery-card {
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.gallery-card:hover {
+    border-color: var(--brand-red);
+}
+
+/* Footer social icons hover */
+footer a i {
+    transition: color 0.3s ease;
+}
+
+footer a:hover i {
+    color: var(--brand-red) !important;
+}
     </style>
 </head>
 <body class="bg-brand-dark">
@@ -239,16 +322,16 @@
                         <div class="mt-8">
                             <dl class="space-y-6">
                                 <div>
-                                    <dt class="text-lg font-semibold text-white">Expert Technicians</dt>
-                                    <dd class="mt-1 text-base text-gray-400">Years of hands-on experience with all major diesel engines.</dd>
+                                   <dt class="text-lg font-semibold text-brand-red">Expert Technicians</dt>
+<dd class="mt-1 text-base text-gray-400">Years of hands-on experience with all major diesel engines.</dd>
                                 </div>
                                 <div>
-                                    <dt class="text-lg font-semibold text-white">Quality Parts</dt>
-                                    <dd class="mt-1 text-base text-gray-400">We use only trusted, high-quality parts for repairs and upgrades.</dd>
+                                    <dt class="text-lg font-semibold text-brand-red">Quality Parts</dt>
+<dd class="mt-1 text-base text-gray-400">We use only trusted, high-quality parts for repairs and upgrades.</dd>
                                 </div>
                                 <div>
-                                    <dt class="text-lg font-semibold text-white">Customer Focused</dt>
-                                    <dd class="mt-1 text-base text-gray-400">We believe in clear communication and fair pricing. No surprises.</dd>
+                                 <dt class="text-lg font-semibold text-brand-red">Customer Focused</dt>
+<dd class="mt-1 text-base text-gray-400">We believe in clear communication and fair pricing. No surprises.</dd>
                                 </div>
                             </dl>
                         </div>
@@ -610,14 +693,8 @@ const showLessBtn = document.getElementById('show-less-reviews');
                 return starsHTML;
             }
 
-           if (reviewsContainer) {
-    const initialReviewCount = 4;
-    
-    function renderReviews(count) {
-        reviewsContainer.innerHTML = '';
-        const reviewsToShow = reviews.slice(0, count);
-        
-        reviewsToShow.forEach(review => {
+            if (reviewsContainer) {
+        reviews.forEach(review => {
             const card = document.createElement('div');
             card.className = 'review-card p-8';
             
