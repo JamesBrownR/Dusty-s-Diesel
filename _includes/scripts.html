@@ -1,32 +1,34 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-       // --- Header and Logo Size on Scroll ---
-const header = document.getElementById('header');
-const navContainer = document.getElementById('nav-container');
-const headerLogo = document.getElementById('header-logo');
-const headerText = document.getElementById('header-text');
+     document.addEventListener('DOMContentLoaded', function () {
+    // --- Header and Logo Size on Scroll ---
+    const header = document.getElementById('header');
+    const navContainer = document.getElementById('nav-container');
+    const headerLogo = document.getElementById('header-logo');
 
-window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    
-    if (scrollPosition < 50) {
-        // At the top - make entire header and logo bigger
-        navContainer.classList.remove('h-20');
-        navContainer.classList.add('h-28', 'md:h-32');
-        headerLogo.classList.remove('h-12');
-        headerLogo.classList.add('h-16', 'md:h-24');
-        headerText.classList.remove('text-xl');
-        headerText.classList.add('text-2xl', 'md:text-4xl');
-    } else {
-        // Scrolled down - normal size
-        navContainer.classList.remove('h-28', 'md:h-32');
-        navContainer.classList.add('h-20');
-        headerLogo.classList.remove('h-16', 'md:h-24');
-        headerLogo.classList.add('h-12');
-        headerText.classList.remove('text-2xl', 'md:text-4xl');
-        headerText.classList.add('text-xl');
+    // Function to handle scroll
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
+        
+        // If scrolled down more than 50px, add 'scrolled' class
+        if (scrollPosition > 50) {
+            header.classList.add('scrolled');
+            navContainer.classList.add('scrolled');
+            headerLogo.classList.add('scrolled');
+        } else {
+            // At top, remove 'scrolled' class to make header/logo grow
+            header.classList.remove('scrolled');
+            navContainer.classList.remove('scrolled');
+            headerLogo.classList.remove('scrolled');
+        }
     }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', handleScroll);
+    
+    // Call once on load to set initial state
+    handleScroll();
 });
     // --- Animate on Scroll (IntersectionObserver) ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
