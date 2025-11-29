@@ -95,6 +95,11 @@
             background: #e11d48; /* rose-600 for a slightly brighter hover */
         }
 
+        .bg-black {
+            padding: 0 0 0 3rem;
+            background-color: black;
+        }
+
     </style>
 </head>
 <body class="bg-brand-dark">
@@ -444,27 +449,142 @@
             // --- Dynamic Review Population ---
             const reviewsContainer = document.getElementById('reviews-container');
             const reviews = [
-                { 
-                    name: 'Cody T.', 
-                    stars: 5, 
-                    text: "Dusty is the man! He knows his stuff and got my truck running better than ever. Fair pricing and honest work. Won't take my diesel anywhere else." 
-                },
-                { 
-                    name: 'Brian S.', 
-                    stars: 5, 
-                    text: "Top-notch service. Had a complex electrical issue that other shops couldn't figure out. Dusty diagnosed and fixed it in a day. Highly recommend." 
-                },
-                { 
-                    name: 'Mark R.', 
-                    stars: 4, 
-                    text: "Good, solid work. They did a full service and replaced my injectors. Price was what they quoted. My only wish is that they had weekend hours, but the quality of work is worth it." 
-                },
-                { 
-                    name: 'Jessica L.', 
-                    stars: 5, 
-                    text: "As a woman, I'm always wary of auto shops. Dusty and his team were respectful, explained everything clearly, and didn't try to upsell me. 10/10 experience." 
-                }
-            ];
+    {
+        "name": "Ramiro Parga",
+        "rating": 5,
+        "body": "Dusty, Brad and Miguel are very professional mechanics, who took us in when they had other's and treaded us like family right away and will definitely be coming back for more upgrades very much recommended thank you 🙏 y'all are BLESSINGS to us guys from San Antonio, TX very reasonable much appreciated guys."
+    },
+    {
+        "name": "Juan Ledezma",
+        "rating": 5,
+        "body": "Great work awesome people appreciate their work and time to get us back on the road, definitely letting them do any work on my truck will be coming back"
+    },
+    {
+        "name": "hector lazo",
+        "rating": 5,
+        "body": "My driver ran out of diesel. I called them and they went out of their way to help us out. We are a trucking company just passing through, but if we were from the area, they would be out go to guys. Thank you Brad & Dusty for helping us out. Best of luck to you guys!"
+    },
+    {
+        "name": "Winona Parsons",
+        "rating": 5,
+        "body": "Well of course this is the best diesel shop ever!! The staff is very knowledgeable and courteous! Stop by and ask about the new Dynojet!!"
+    },
+    {
+        "name": "Darrell Collins",
+        "rating": 5,
+        "body": "Brad and Miguel are very knowledgeable and professional. Their shop deleted the def and EGR systems in 2021. The truck has ran great since then. I had to get the transmission rebuilt in June 2023 and the shop that did the rebuild could not … More"
+    },
+    {
+        "name": "Ashley Giles",
+        "rating": 5,
+        "body": "I was in town for a short period of time visiting family and my diesel truck was having issues. Rusty got me in the same day I called and the truck was fixed the very next day! He took the time to show me what he thought the issue was, what … More"
+    },
+    {
+        "name": "Kyle Bebber",
+        "rating": 5,
+        "body": "Have had a few things done here on a couple vehicles. Very honest and knowledgeable. Would recommend to anyone who needs repairs or tuning."
+    },
+    {
+        "name": "Daniel S.",
+        "rating": 5,
+        "body": "Dusty is fair priced and does high quality work!! This is the place to go when you want high performance install, at a affordable price. Dusty is the man !!!!"
+    },
+    {
+        "name": "Betty Hopper",
+        "rating": 5,
+        "body": "Couldn't ask for more professional and helpful folks!! Outstanding service, above & beyond anything we expected! We would certainly highly recommend them!!"
+    },
+    {
+        "name": "Walter Bannon",
+        "rating": 5,
+        "body": "Very knowledgeable shop! They will get you taken care of!"
+    },
+    {
+        "name": "Bud Bell",
+        "rating": 5,
+        "body": "They took care everything That needed to be done on the truck. And it runs beautiful."
+    },
+    {
+        "name": "Lee Cook",
+        "rating": 5,
+        "body": "Very knowledgeable, quick, and very affordable"
+    },
+    {
+        "name": "Galdino Rios",
+        "rating": 5,
+        "body": "Exelente work"
+    },
+    {
+        "name": "Misty Gregory",
+        "rating": 5,
+        "body": "Reasonable price… More"
+    },
+    {
+        "name": "Cody Wright",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Daniel Orta",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Kenny Rogers",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "LaWanda Beyer",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Trevor Tate",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Keith Lowe",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Lindsey Bales",
+        "rating": 5,
+        "body": ""
+    },
+    {
+        "name": "Danna",
+        "rating": 4,
+        "body": ""
+    },
+    {
+        "name": "Bruce David",
+        "rating": 4,
+        "body": ""
+    },
+    {
+        "name": "Curt Kleber",
+        "rating": 4,
+        "body": ""
+    },
+    {
+        "name": "Dalton Chhit",
+        "rating": 1,
+        "body": "They deleted my 2018 duramax and left the ecm hanging by the wires. I have had codes thrown constantly since they did the job and they will not answer the phone or reply back to anything. Pretty pathetic. Will never recommend them! More"
+    },
+    {
+        "name": "Cesar David",
+        "rating": 1,
+        "body": "This guy charged me $500 to load a tune that took him 10 minutes to do, 5 minutes after he left the truck got a P0278 check engine code for a cylinder out of balance, and I let him know immediately, he didn't bother coming back and just let … More"
+    },
+    {
+        "name": "Samir Jusic",
+        "rating": 1,
+        "body": "All this shop does it change oil they don't do anything else"
+    }
+];
             
             // Helper function to render star icons
             function renderStars(rating) {
