@@ -485,58 +485,59 @@ footer a:hover i {
 
 
     <!-- JavaScript for Mobile Menu and Dynamic Content -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            
-            // --- Mobile Menu Toggle ---
-            const menuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const iconOpen = document.getElementById('menu-icon-open');
-            const iconClose = document.getElementById('menu-icon-close');
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+    
+    // --- Mobile Menu Toggle ---
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
 
-            menuButton.addEventListener('click', () => {
-                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                menuButton.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
-                iconOpen.classList.toggle('hidden');
-                iconClose.classList.toggle('hidden');
-            });
-            
-            // --- Dynamic Gallery Population ---
-            const galleryContainer = document.getElementById('gallery-grid');
-            const galleryImages = [
-                { src: 'https://placehold.co/600x400/111/FFF?text=Engine+Build', alt: 'Custom diesel engine build' },
-                { src: 'https://placehold.co/600x400/222/FFF?text=Truck+on+Lift', alt: 'Truck on a service lift' },
-                { src: 'https://placehold.co/600x400/111/FFF?text=Tuning+Setup', alt: 'Performance tuning setup' },
-                { src: 'https://placehold.co/600x400/222/FFF?text=Finished+Project', alt: 'Finished custom truck project' },
-                { src: 'https://placehold.co/600x400/222/FFF?text=Suspension+Work', alt: 'Suspension upgrade' },
-                { src: 'https://placehold.co/600x400/111/FFF?text=Welding+Fabrication', alt: 'Custom fabrication work' },
-                { src: 'https://placehold.co/600x400/222/FFF?text=Turbo+Install', alt: 'Turbo installation' },
-                { src: 'https://placehold.co/600x400/111/FFF?text=Shop+Interior', alt: 'Inside the shop' },
-            ];
+    menuButton.addEventListener('click', () => {
+        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+        menuButton.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+    });
+    
+    // --- Dynamic Gallery Population ---
+    const galleryContainer = document.getElementById('gallery-grid');
+    const galleryImages = [
+        { src: 'https://placehold.co/600x400/111/FFF?text=Engine+Build', alt: 'Custom diesel engine build' },
+        { src: 'https://placehold.co/600x400/222/FFF?text=Truck+on+Lift', alt: 'Truck on a service lift' },
+        { src: 'https://placehold.co/600x400/111/FFF?text=Tuning+Setup', alt: 'Performance tuning setup' },
+        { src: 'https://placehold.co/600x400/222/FFF?text=Finished+Project', alt: 'Finished custom truck project' },
+        { src: 'https://placehold.co/600x400/222/FFF?text=Suspension+Work', alt: 'Suspension upgrade' },
+        { src: 'https://placehold.co/600x400/111/FFF?text=Welding+Fabrication', alt: 'Custom fabrication work' },
+        { src: 'https://placehold.co/600x400/222/FFF?text=Turbo+Install', alt: 'Turbo installation' },
+        { src: 'https://placehold.co/600x400/111/FFF?text=Shop+Interior', alt: 'Inside the shop' },
+    ];
 
-            if (galleryContainer) {
-                galleryImages.forEach(image => {
-                    const card = document.createElement('div');
-                    card.className = 'gallery-card relative group';
-                    
-                    card.innerHTML = `
-                        <div class="overflow-hidden rounded-lg">
-                            <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
-                        </div>
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
-                            <p class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">${image.alt}</p>
-                        </div>
-                    `;
-                    galleryContainer.appendChild(card);
-                });
-            }
+    if (galleryContainer) {
+        galleryImages.forEach(image => {
+            const card = document.createElement('div');
+            card.className = 'gallery-card relative group';
             
-            // --- Dynamic Review Population ---
-            const reviewsContainer = document.getElementById('reviews-container');
-            const showMoreBtn = document.getElementById('show-more-reviews');
-const showLessBtn = document.getElementById('show-less-reviews');
-            const reviews = [
+            card.innerHTML = `
+                <div class="overflow-hidden rounded-lg">
+                    <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">${image.alt}</p>
+                </div>
+            `;
+            galleryContainer.appendChild(card);
+        });
+    }
+    
+    // --- Dynamic Review Population ---
+    const reviewsContainer = document.getElementById('reviews-container');
+    const showMoreBtn = document.getElementById('show-more-reviews');
+    const showLessBtn = document.getElementById('show-less-reviews');
+    
+     const reviews = [
     {
         "name": "Ramiro Parga",
         "rating": 5,
@@ -657,114 +658,9 @@ const showLessBtn = document.getElementById('show-less-reviews');
         "rating": 4,
         "body": ""
     },
-    {
-        "name": "Dalton Chhit",
-        "rating": 1,
-        "body": "They deleted my 2018 duramax and left the ecm hanging by the wires. I have had codes thrown constantly since they did the job and they will not answer the phone or reply back to anything. Pretty pathetic. Will never recommend them! More"
-    },
-    {
-        "name": "Cesar David",
-        "rating": 1,
-        "body": "This guy charged me $500 to load a tune that took him 10 minutes to do, 5 minutes after he left the truck got a P0278 check engine code for a cylinder out of balance, and I let him know immediately, he didn't bother coming back and just let … More"
-    },
-    {
-        "name": "Samir Jusic",
-        "rating": 1,
-        "body": "All this shop does it change oil they don't do anything else"
-    }
 ];
-            
-        document.addEventListener('DOMContentLoaded', function () {
     
-    // --- Mobile Menu Toggle ---
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const iconOpen = document.getElementById('menu-icon-open');
-    const iconClose = document.getElementById('menu-icon-close');
-
-    menuButton.addEventListener('click', () => {
-        const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-        menuButton.setAttribute('aria-expanded', !isExpanded);
-        mobileMenu.classList.toggle('hidden');
-        iconOpen.classList.toggle('hidden');
-        iconClose.classList.toggle('hidden');
-    });
-    
-    // --- Scroll Animation Observer ---
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-section');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe all major sections
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-    
-    // --- Dynamic Gallery Population ---
-    const galleryContainer = document.getElementById('gallery-grid');
-    const galleryImages = [
-        { src: 'https://placehold.co/600x400/111/FFF?text=Engine+Build', alt: 'Custom diesel engine build' },
-        { src: 'https://placehold.co/600x400/222/FFF?text=Truck+on+Lift', alt: 'Truck on a service lift' },
-        { src: 'https://placehold.co/600x400/111/FFF?text=Tuning+Setup', alt: 'Performance tuning setup' },
-        { src: 'https://placehold.co/600x400/222/FFF?text=Finished+Project', alt: 'Finished custom truck project' },
-        { src: 'https://placehold.co/600x400/222/FFF?text=Suspension+Work', alt: 'Suspension upgrade' },
-        { src: 'https://placehold.co/600x400/111/FFF?text=Welding+Fabrication', alt: 'Custom fabrication work' },
-        { src: 'https://placehold.co/600x400/222/FFF?text=Turbo+Install', alt: 'Turbo installation' },
-        { src: 'https://placehold.co/600x400/111/FFF?text=Shop+Interior', alt: 'Inside the shop' },
-    ];
-
-    if (galleryContainer) {
-        galleryImages.forEach(image => {
-            const card = document.createElement('div');
-            card.className = 'gallery-card relative group';
-            
-            card.innerHTML = `
-                <div class="overflow-hidden rounded-lg">
-                    <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-transform duration-500 ease-in-out group-hover:scale-110">
-                </div>
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-opacity duration-300 flex items-center justify-center">
-                    <p class="text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 text-center">${image.alt}</p>
-                </div>
-            `;
-            galleryContainer.appendChild(card);
-        });
-    }
-    
-    // --- Dynamic Review Population ---
-    const reviewsContainer = document.getElementById('reviews-container');
-    const reviews = [
-        {
-            "name": "Ramiro Parga",
-            "rating": 5,
-            "body": "Dusty, Brad and Miguel are very professional mechanics, who took us in when they had other's and treaded us like family right away and will definitely be coming back for more upgrades very much recommended thank you 🙏 y'all are BLESSINGS to us guys from San Antonio, TX very reasonable much appreciated guys."
-        },
-        {
-            "name": "Juan Ledezma",
-            "rating": 5,
-            "body": "Great work awesome people appreciate their work and time to get us back on the road, definitely letting them do any work on my truck will be coming back"
-        },
-        {
-            "name": "hector lazo",
-            "rating": 5,
-            "body": "My driver ran out of diesel. I called them and they went out of their way to help us out. We are a trucking company just passing through, but if we were from the area, they would be out go to guys. Thank you Brad & Dusty for helping us out. Best of luck to you guys!"
-        },
-        {
-            "name": "Winona Parsons",
-            "rating": 5,
-            "body": "Well of course this is the best diesel shop ever!! The staff is very knowledgeable and courteous! Stop by and ask about the new Dynojet!!"
-        }
-    ];
+    const initialReviewCount = 4;
     
     // Helper function to render star icons
     function renderStars(rating) {
@@ -784,9 +680,15 @@ const showLessBtn = document.getElementById('show-less-reviews');
         }
         return starsHTML;
     }
-
-    if (reviewsContainer) {
-        reviews.forEach(review => {
+    
+    // Function to render reviews
+    function renderReviews(count) {
+        if (!reviewsContainer) return;
+        
+        reviewsContainer.innerHTML = '';
+        const reviewsToShow = reviews.slice(0, count);
+        
+        reviewsToShow.forEach(review => {
             const card = document.createElement('div');
             card.className = 'review-card p-8';
             
@@ -807,30 +709,32 @@ const showLessBtn = document.getElementById('show-less-reviews');
             `;
             reviewsContainer.appendChild(card);
         });
- 
-
+    }
 
     // Initial render - show only 4 reviews
     renderReviews(initialReviewCount);
     
     // Show More button
-    showMoreBtn.addEventListener('click', () => {
-        renderReviews(reviews.length);
-        showMoreBtn.classList.add('hidden');
-        showLessBtn.classList.remove('hidden');
-    });
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            renderReviews(reviews.length);
+            showMoreBtn.classList.add('hidden');
+            showLessBtn.classList.remove('hidden');
+        });
+    }
     
     // Show Less button
-    showLessBtn.addEventListener('click', () => {
-        renderReviews(initialReviewCount);
-        showLessBtn.classList.add('hidden');
-        showMoreBtn.classList.remove('hidden');
-        // Scroll back to reviews section
-        document.getElementById('reviews').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-}
+    if (showLessBtn) {
+        showLessBtn.addEventListener('click', () => {
+            renderReviews(initialReviewCount);
+            showLessBtn.classList.add('hidden');
+            showMoreBtn.classList.remove('hidden');
+            // Scroll back to reviews section
+            document.getElementById('reviews').scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-    </script>
+    }
+});
+</script>
 
 </body>
 </html>
