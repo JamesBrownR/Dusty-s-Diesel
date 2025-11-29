@@ -4,6 +4,7 @@ title: "ECU Tuning 101: Unlock Your Diesel's True Potential"
 image: /blogs/enginetune.webp
 description: "Learn how ECU tuning can transform your diesel truck's performance, fuel economy, and drivability."
 ---
+
 ## ECU Tuning 101: Unlock Your Diesel's True Potential
 
 Your diesel truck came from the factory with a computer brain designed to balance performance, emissions, fuel economy, and drivability across a wide range of conditions. But here's the thing: your truck isn't average, and neither are your needs. That's where ECU tuning comes in.
