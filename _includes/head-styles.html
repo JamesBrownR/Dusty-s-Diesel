@@ -275,7 +275,300 @@ footer a i {
 footer a:hover i {
     color: var(--brand-red) !important;
 }
+/* ==================================
+   CARD HOVER ANIMATIONS
+   ================================== */
 
+/* Base Card Styles */
+.service-card {
+  position: relative;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+/* Hover Effect: Lift and Glow */
+.service-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3),
+              0 0 30px rgba(220, 38, 38, 0.2);
+}
+
+/* Animated Border on Hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.75rem;
+  padding: 2px;
+  background: linear-gradient(45deg, #dc2626, #991b1b, #dc2626);
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: borderGlow 3s ease infinite;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Shine Effect on Hover */
+.service-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover::after {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Icon Animation */
+.service-card .bg-brand-red {
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .bg-brand-red {
+  transform: rotate(360deg) scale(1.1);
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+}
+
+/* Text Glow on Hover */
+.service-card:hover h3 {
+  text-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+
+/* Link Arrow Animation */
+.service-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover a {
+  gap: 1rem;
+  transform: translateX(5px);
+}
+
+
+/* ==================================
+   ALTERNATIVE CARD STYLES
+   ================================== */
+
+/* Option 2: Tilt 3D Effect */
+.card-tilt {
+  position: relative;
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(20px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Option 3: Flip Card */
+.card-flip {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 0.75rem;
+  background: #1f2937;
+  padding: 2rem;
+}
+
+.card-flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+}
+
+/* Option 4: Expand on Hover */
+.card-expand {
+  position: relative;
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  overflow: hidden;
+}
+
+.card-expand:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.card-expand::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.card-expand:hover::before {
+  width: 500px;
+  height: 500px;
+}
+
+/* Option 5: Slide Up Content */
+.card-slide {
+  position: relative;
+  background: #1f2937;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  height: 300px;
+}
+
+.card-slide-content {
+  padding: 2rem;
+  transition: transform 0.4s ease;
+}
+
+.card-slide-hidden {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(220, 38, 38, 0.95);
+  padding: 2rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.card-slide:hover .card-slide-content {
+  transform: translateY(-50%);
+}
+
+.card-slide:hover .card-slide-hidden {
+  transform: translateY(0);
+}
+
+/* Option 6: Pulse Glow */
+.card-pulse {
+  position: relative;
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card-pulse:hover {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6),
+                0 0 60px rgba(220, 38, 38, 0.4);
+  }
+}
+
+/* Option 7: Border Draw Animation */
+.card-border-draw {
+  position: relative;
+  background: #1f2937;
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.card-border-draw::before,
+.card-border-draw::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  transition: all 0.4s ease;
+}
+
+.card-border-draw::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid #dc2626;
+  border-left: 2px solid #dc2626;
+}
+
+.card-border-draw::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid #dc2626;
+  border-right: 2px solid #dc2626;
+}
+
+.card-border-draw:hover::before,
+.card-border-draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+/* Brand Red Color Variable for Consistency */
+:root {
+  --brand-red: #dc2626;
+  --brand-red-dark: #991b1b;
+  --brand-dark: #0f172a;
+}
        
 
 /* Image tilt hover effect */
