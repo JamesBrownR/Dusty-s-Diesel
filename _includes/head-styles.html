@@ -101,6 +101,31 @@
             padding: 0 0 3rem 0;
             background-color: black;
         }
+
+  /* Header scrolled state - smaller */
+#header.scrolled {
+    /* Optional: reduce backdrop blur or change opacity */
+}
+
+#nav-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: padding 0.3s ease;
+}
+
+#nav-container.scrolled {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#header-logo {
+    height: 6rem;
+    transition: height 0.3s ease;
+}
+
+#header-logo.scrolled {
+    height: 3.5rem; /* Smaller when scrolled down */
+}
 /* Navigation link hover effect with underline */
 nav a[href*="/"] {
     position: relative;
