@@ -279,22 +279,23 @@
 
         <!-- Testimonials Section -->
         <section id="reviews" class="py-16 sm:py-24 bg-brand-dark">
-            <div class="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">WHAT OUR CUSTOMERS SAY</h2>
-                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
-                        We're proud of our 4.4-star rating from 27+ reviews!
-                    </p>
-                </div>
-                <!-- Reviews container will be populated by JavaScript -->
-                <div id="reviews-container" class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-2">
-                    <!-- Review cards will be injected here -->
-                </div>
-                <div class="text-center mt-12">
-                     <a href="https://www.google.com/maps/place/Dusty's+Diesel/@34.4906295,-97.1131514,17z/data=!4m18!1m9!3m8!1s0x87b2d9c3297d8f13:0x29401e1d5055961b!2sDusty's+Diesel!8m2!3d34.4906921!4d-97.1134338!9m1!1b1!16s%2Fg%2F11gtg8_bc4!3m7!1s0x87b2d9c3297d8f13:0x29401e1d5055961b!8m2!3d34.4906921!4d-97.1134338!9m1!1b1!16s%2Fg%2F11gtg8_bc4?entry=ttu" target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-brand-red hover:text-opacity-80 transition-colors">
-                        Read all 27+ reviews on Google &rarr;
-                    </a>
-                </div>
+          <!-- Reviews container will be populated by JavaScript -->
+<div id="reviews-container" class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-2">
+    <!-- Review cards will be injected here -->
+</div>
+<div class="text-center mt-12">
+    <button id="show-more-reviews" class="px-6 py-3 text-base font-semibold rounded-md shadow-lg text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus-ring">
+        Show More Reviews
+    </button>
+    <button id="show-less-reviews" class="hidden px-6 py-3 text-base font-semibold rounded-md shadow-lg text-white bg-gray-700 hover:bg-gray-600 transition-all duration-300 transform hover:scale-105 focus-ring">
+        Show Less Reviews
+    </button>
+</div>
+<div class="text-center mt-8">
+    <a href="https://www.google.com/maps/place/Dusty's+Diesel/..." target="_blank" rel="noopener noreferrer" class="text-lg font-medium text-brand-red hover:text-opacity-80 transition-colors">
+        Read all 27+ reviews on Google &rarr;
+    </a>
+</div>
             </div>
         </section>
         
@@ -448,6 +449,8 @@
             
             // --- Dynamic Review Population ---
             const reviewsContainer = document.getElementById('reviews-container');
+            const showMoreBtn = document.getElementById('show-more-reviews');
+const showLessBtn = document.getElementById('show-less-reviews');
             const reviews = [
     {
         "name": "Ramiro Parga",
@@ -605,30 +608,55 @@
                 return starsHTML;
             }
 
-            if (reviewsContainer) {
-                reviews.forEach(review => {
-                    const card = document.createElement('div');
-                    card.className = 'review-card p-8';
-                    
-                    card.innerHTML = `
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center text-white text-xl font-bold">
-                                ${review.name.charAt(0)}
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-bold text-white">${review.name}</h4>
-                                <div class="flex items-center text-sm text-gray-400">
-                                    ${renderStars(review.rating)}
-                                    <span class="ml-2">${review.rating} Stars</span>
-                                </div>
-                            </div>
+           if (reviewsContainer) {
+    const initialReviewCount = 4;
+    
+    function renderReviews(count) {
+        reviewsContainer.innerHTML = '';
+        const reviewsToShow = reviews.slice(0, count);
+        
+        reviewsToShow.forEach(review => {
+            const card = document.createElement('div');
+            card.className = 'review-card p-8';
+            
+            card.innerHTML = `
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-brand-red flex items-center justify-center text-white text-xl font-bold">
+                        ${review.name.charAt(0)}
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-bold text-white">${review.name}</h4>
+                        <div class="flex items-center text-sm text-gray-400">
+                            ${renderStars(review.rating)}
+                            <span class="ml-2">${review.rating} Stars</span>
                         </div>
-                        <p class="text-gray-300 italic">"${review.body}"</p>
-                    `;
-                    reviewsContainer.appendChild(card);
-                });
-            }
-
+                    </div>
+                </div>
+                <p class="text-gray-300 italic">"${review.body}"</p>
+            `;
+            reviewsContainer.appendChild(card);
+        });
+    }
+    
+    // Initial render - show only 4 reviews
+    renderReviews(initialReviewCount);
+    
+    // Show More button
+    showMoreBtn.addEventListener('click', () => {
+        renderReviews(reviews.length);
+        showMoreBtn.classList.add('hidden');
+        showLessBtn.classList.remove('hidden');
+    });
+    
+    // Show Less button
+    showLessBtn.addEventListener('click', () => {
+        renderReviews(initialReviewCount);
+        showLessBtn.classList.add('hidden');
+        showMoreBtn.classList.remove('hidden');
+        // Scroll back to reviews section
+        document.getElementById('reviews').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
         });
     </script>
 
