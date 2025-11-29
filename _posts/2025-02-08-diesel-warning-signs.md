@@ -5,6 +5,7 @@ image: blog/engineboom.webp
 description: "Practical guide to identifying serious diesel problems early before they become expensive repairs."
 ---
 
+
 ## 7 Warning Signs Your Diesel Engine Needs Immediate Attention
 
 Your diesel engine is trying to talk to you. The question is: are you listening? Catching problems early can save you thousands of dollars in repairs and prevent being stranded on the side of the road. After years of working on diesels at Dusty's Diesel, we've seen what happens when warning signs get ignored. Here are the seven critical symptoms you should never overlook.
