@@ -46,14 +46,24 @@
             },
         };
 
-        /* Hero section background image */
-        .hero-section {
-            /* Using a placeholder for a dramatic diesel engine/truck shot */
-    background-image: url('Dusty-s-Diesel1.png');
-            background-size: cover;
-            background-position: center;
-            
-        }
+       /* Hero section background image */
+.hero-section {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('Dusty-s-Diesel3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* 3D text effect for hero title */
+.hero-title {
+    text-shadow: 
+        2px 2px 0px rgba(209, 29, 39, 0.8),
+        4px 4px 0px rgba(0, 0, 0, 0.6),
+        6px 6px 10px rgba(0, 0, 0, 0.8);
+}
 
         /* Custom focus rings for accessibility */
         .focus-ring {
