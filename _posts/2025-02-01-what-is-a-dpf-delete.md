@@ -55,6 +55,6 @@ For off-road and competition vehicles where DPF deletes are legal, proper tuning
 
 Understanding what a DPF delete involves helps you make informed decisions about your diesel truck. Whether you're dealing with a failing DPF system, building a competition vehicle, or maintaining an off-road work truck, knowing your options and the legal landscape is crucial.
 
-If you have questions about DPF systems, performance tuning, or keeping your diesel running strong, the team at Dusty's Diesel is here to help. We provide expert diagnostics, honest advice, and top-quality service for all your diesel needs—always within the bounds of applicable regulations.
+If you have questions about DPF systems, performance tuning, or keeping your diesel running strong, the team at Dusty's Diesel is here to help. We provide expert diagnostics, honest advice, and top-quality service for all your diesel needs within regulations.
 
 **Need diesel expertise you can trust?** Contact Dusty's Diesel in Davis, OK at (918) 973-3545 or stop by our shop at 8305 W. McKee Industrial Rd. We're your local diesel specialists, ready to keep your truck running at its best.
