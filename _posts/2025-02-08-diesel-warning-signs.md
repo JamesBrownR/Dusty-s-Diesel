@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "7 Warning Signs Your Diesel Engine Needs Immediate Attention"
-image: blog/engineboom.webp
+image: /blog/engineboom.webp
 description: "Practical guide to identifying serious diesel problems early before they become expensive repairs."
 ---
 
