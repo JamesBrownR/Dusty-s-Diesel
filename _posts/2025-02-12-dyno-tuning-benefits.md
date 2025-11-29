@@ -11,7 +11,7 @@ You've decided to tune your diesel for more power, better towing, or improved fu
 
 
 ### What Are Canned Tunes?
-
+===================================
 
 Canned tunes (also called off-the-shelf or pre-programmed tunes) are generic tuning files designed to work on a specific make and model of truck. You buy a tuner device, plug it in, select a power level, and upload the tune to your ECU. It's fast, convenient, and relatively cheap.
 
@@ -19,13 +19,15 @@ The problem? Your truck isn't generic.
 
 
 ### What Is Dyno Tuning?
-
+===================================
 
 Dyno tuning is a custom process where your truck is strapped to a dynamometer (dyno) and tuned specifically for your engine, modifications, altitude, and performance goals. A professional tuner makes real-time adjustments while monitoring dozens of parameters, then tests the results immediately.
 
 At Dusty's Diesel, we use a Dynojet chassis dynamometer to measure your truck's exact power output and refine every aspect of the tune until it's perfect for your specific setup.
 
+
 ### The Critical Differences
+
 
 #### 1. Your Truck Is Unique
 
