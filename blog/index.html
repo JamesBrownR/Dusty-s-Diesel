@@ -1,1 +1,105 @@
+---
+layout: default
+title: Diesel Tips, Guides & Updates | Dusty's Diesel Blog
+description: Read the latest articles, guides, and updates from Dusty's Diesel. Expert tips on diesel repair, tuning, programming, and performance.
+---
+
+<!-- Hero -->
+<section class="heroo-section h-[70vh] min-h-[350px] flex items-center justify-center text-center">
+    <div class="px-4">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tighter hero-title">
+            DIESEL KNOWLEDGE HUB
+        </h1>
+        <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-200" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">
+            Expert tips, guides, and insights from the team at Dusty's Diesel.
+        </p>
+    </div>
+</section>
+
+<!-- Blog Posts -->
+<section class="py-24 bg-gray-900">
+    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+            <h2 class="text-xl font-semibold text-brand-red uppercase tracking-wide">
+                Latest Articles
+            </h2>
+            <p class="mt-4 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
+                FROM THE SHOP FLOOR TO THE OPEN ROAD
+            </p>
+            <p class="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">
+                Real-world insights, no fluff. Whether you're into tuning, repairs, or diesel performance — we've got you covered.
+            </p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+
+            {% for post in site.posts %}
+            <article class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 overflow-hidden hover:scale-[1.02] transition-all duration-300">
+                
+                <!-- Feature Image -->
+                {% if post.image %}
+                <a href="{{ post.url | relative_url }}">
+                    <img src="{{ post.image | relative_url }}" class="w-full h-56 object-cover" alt="{{ post.title }}">
+                </a>
+                {% else %}
+                <div class="w-full h-56 bg-gray-700 flex items-center justify-center text-gray-400 text-lg">
+                    No Image
+                </div>
+                {% endif %}
+
+                <!-- Content -->
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-white leading-tight">
+                        <a href="{{ post.url | relative_url }}" class="hover:text-brand-red transition-colors">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+
+                    {% if post.date %}
+                    <p class="mt-2 text-sm text-gray-500">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </p>
+                    {% endif %}
+
+                    <p class="mt-4 text-gray-400 text-lg line-clamp-3">
+                        {{ post.excerpt | strip_html | truncate: 150 }}
+                    </p>
+
+                    <a href="{{ post.url | relative_url }}"
+                       class="inline-block mt-6 text-brand-red font-semibold text-lg hover:text-opacity-80 transition-colors">
+                        Read More →
+                    </a>
+                </div>
+
+            </article>
+            {% endfor %}
+
+        </div>
+
+        <!-- Empty State if No Posts Yet -->
+        {% if site.posts == empty %}
+        <p class="text-center text-gray-400 mt-20 text-lg">
+            No blogs yet — check back soon.
+        </p>
+        {% endif %}
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 bg-brand-dark text-center">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+        WANT MORE DIESEL TIPS?
+    </h2>
+    <p class="mt-6 text-xl text-gray-400 max-w-2xl mx-auto">
+        We post tuning insights, repair guides, and engine programming updates regularly.
+    </p>
+    <a href="{{ site.baseurl }}/contact"
+       class="mt-10 inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105"
+       style="border-color: #ffffff; border-width: medium;">
+        Contact Us
+    </a>
+</section>
 
