@@ -102,11 +102,11 @@
             background-color: black;
         }
 /* Navigation link hover effect with underline */
-nav a[href*=".html"] {
+nav a[href*="/"] {
     position: relative;
 }
 
-nav a[href*=".html"]::after {
+nav a[href*="/"]::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -117,7 +117,7 @@ nav a[href*=".html"]::after {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-nav a[href*=".html"]:hover::after {
+nav a[href*="/"]:hover::after {
     width: 100%;
     left: 0;
 }
