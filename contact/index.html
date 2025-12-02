@@ -4,6 +4,68 @@ title: Contact Dusty's Diesel | Get a Quote
 description: Contact Dusty's Diesel for diesel repair, tuning, and truck programming. Call, message, or request a quote today.
 ---
 
+
+<head>
+    <style>
+        /* A placeholder color for your 'brand-red'.
+          Replace #DC2626 with your actual brand color.
+        */
+        :root {
+            --brand-red: #f37c43; /* Using Tailwind's red-600 */
+        }
+
+        /* Styles for the file input wrapper */
+        .custom-file-input {
+            width: 100%;
+            padding: 0.75rem; /* p-3 */
+            background-color: #111827; /* bg-gray-900 */
+            border: 1px solid #374151; /* border border-gray-700 */
+            border-radius: 0.5rem; /* rounded-lg */
+            color: #D1D5DB; /* text-gray-300 */
+
+            /* Prevents the default padding from messing up our button */
+            padding-inline-start: 0.75rem;
+        }
+
+        /* --- This is the magic part for the button --- */
+
+        /* Styles for the "Choose File" button (Chrome, Safari, Edge) */
+        .custom-file-input::-webkit-file-upload-button {
+            margin-right: 1rem; /* file:mr-4 */
+            padding: 0.5rem 1rem; /* file:py-2 file:px-4 */
+            border-radius: 0.5rem; /* file:rounded-lg */
+            border: 0; /* file:border-0 */
+            font-size: 0.875rem; /* file:text-sm */
+            font-weight: 600; /* file:font-semibold */
+            cursor: pointer; /* file:cursor-pointer */
+            
+            background-color: var(--brand-red); /* file:bg-brand-red */
+            color: #ffffff; /* file:text-white */
+            transition: opacity 0.2s ease;
+        }
+
+        /* Styles for the "Choose File" button (Firefox) */
+        .custom-file-input::file-selector-button {
+            margin-right: 1rem; /* file:mr-4 */
+            padding: 0.5rem 1rem; /* file:py-2 file:px-4 */
+            border-radius: 0.5rem; /* file:rounded-lg */
+            border: 0; /* file:border-0 */
+            font-size: 0.875rem; /* file:text-sm */
+            font-weight: 600; /* file:font-semibold */
+            cursor: pointer; /* file:cursor-pointer */
+            
+            background-color: var(--brand-red); /* file:bg-brand-red */
+            color: #ffffff; /* file:text-white */
+            transition: opacity 0.2s ease;
+        }
+
+        /* Hover state for the button */
+        .custom-file-input::-webkit-file-upload-button:hover,
+        .custom-file-input::file-selector-button:hover {
+            opacity: 0.8; /* Replicates hover:file:bg-opacity-80 */
+        }
+    </style>
+</head>
 <!-- Herjo -->
 <section class="heroo-section flex items-center justify-center text-center">
     <div class="px-4">
