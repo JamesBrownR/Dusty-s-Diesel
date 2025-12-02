@@ -91,51 +91,53 @@ description: Contact Dusty's Diesel for diesel repair, tuning, and truck program
             </div>
 
             <!-- RIGHT: Contact Form -->
-            <div id="quote" class="bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700">
-                <h2 class="text-3xl font-extrabold text-white tracking-tight">Request a Quote</h2>
-                <p class="mt-4 text-gray-400 text-lg">
-                    Tell us what’s going on with your truck and we’ll get back to you quickly.
-                </p>
+<div id="quote" class="bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700">
+    <h2 class="text-3xl font-extrabold text-white tracking-tight">Request a Quote</h2>
+    <p class="mt-4 text-gray-400 text-lg">
+        Tell us what's going on with your truck and we'll get back to you quickly.
+    </p>
 
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="mt-10 space-y-6">
+    <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data" class="mt-10 space-y-6">
 
-                    <!-- Name -->
-                    <div>
-                        <label class="block text-gray-300 mb-2 font-medium">Name</label>
-                        <input type="text" name="name" required
-                               class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
-                    </div>
+        <!-- Name -->
+        <div>
+            <label class="block text-gray-300 mb-2 font-medium">Name</label>
+            <input type="text" name="name" required
+                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
+        </div>
 
-                    <!-- Email -->
-                    <div>
-                        <label class="block text-gray-300 mb-2 font-medium">Email</label>
-                        <input type="email" name="email" required
-                               class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
-                    </div>
+        <!-- Email -->
+        <div>
+            <label class="block text-gray-300 mb-2 font-medium">Email</label>
+            <input type="email" name="email" required
+                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
+        </div>
 
-                    <!-- Phone -->
-                    <div>
-                        <label class="block text-gray-300 mb-2 font-medium">Phone</label>
-                        <input type="text" name="phone"
-                               class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
-                    </div>
+        <!-- Phone -->
+        <div>
+            <label class="block text-gray-300 mb-2 font-medium">Phone</label>
+            <input type="text" name="phone"
+                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
+        </div>
 
-                    <!-- Message -->
-                    <div>
-                        <label class="block text-gray-300 mb-2 font-medium">How can we help?</label>
-                        <textarea name="message" rows="5" required
-                                  class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red"></textarea>
-                    </div>
+        <!-- Message -->
+        <div>
+            <label class="block text-gray-300 mb-2 font-medium">How can we help?</label>
+            <textarea name="message" rows="5" required
+                      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red"></textarea>
+        </div>
 
-                    <!-- Button -->
-                    <button type="submit"
-                            class="w-full py-3 px-6 text-lg font-semibold bg-brand-red text-white rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus-ring"
-                            style="border-color: #ffffff; border-width: medium;">
-                        Send Message
-                    </button>
+        <!-- Bin File Upload -->
+        <div>
+            <label class="block text-gray-300 mb-2 font-medium">Upload BIN File (optional)</label>
+            <input type="file" name="binfile" accept=".bin"
+                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-brand-red file:text-white hover:file:bg-opacity-80 file:cursor-pointer focus:border-brand-red focus:ring-brand-red">
+            <p class="mt-2 text-sm text-gray-500">Upload your ECU bin file for tuning services</p>
+        </div>
 
-                </form>
-            </div>
+        <!-- Button -->
+        <button type="submit"
+                class="w-full py-3 px-6 text-lg font-semibold bg-brand-red text-white rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-300 transform hover:sc
 
         </div>
     </div>
