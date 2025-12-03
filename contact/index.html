@@ -90,152 +90,158 @@ description: Contact Dusty's Diesel for diesel repair, tuning, and truck program
 <section id="quote" class="py-24 bg-gray-900">
     <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-        <div id="quote" class="grid gap-12 md:grid-cols-2">
+        <!-- Request a Quote Form - Full Width at Top -->
+        <div id="quote" class="mb-12 bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700">
+            <h2 class="text-3xl font-extrabold text-white tracking-tight">Request a Quote</h2>
+            <p class="mt-4 text-gray-400 text-lg">
+                Tell us what's going on with your truck and we'll get back to you quickly.
+            </p>
 
-         <!-- LEFT: Contact Info -->
-            <div class="space-y-6">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-extrabold text-white tracking-tight">Get in Touch</h2>
-                    <p class="mt-3 text-gray-400 text-lg">
-                        Reach out to the team anytime for diagnostics, tuning, repairs, or engine programming.
-                    </p>
+            <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data" class="mt-10 grid gap-6 md:grid-cols-2">
+
+                <!-- Name -->
+                <div>
+                    <label class="block text-gray-300 mb-2 font-medium">Name</label>
+                    <input type="text" name="name" required
+                           class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
                 </div>
 
-                <!-- Phone Card -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-brand-red transition-all duration-300 transform hover:scale-105">
-                    <div class="flex items-center justify-center mb-3">
-                        <i class="fa-solid fa-phone text-brand-red text-3xl"></i>
-                    </div>
-                    <p class="text-center font-semibold text-white text-lg mb-2">Phone</p>
-                    <a href="tel:+19189733545" class="block text-center text-gray-300 hover:text-brand-red transition-colors text-xl">
-                        +1 (918) 973-3545
-                    </a>
-                
-
-                <!-- Email Card -->
-                    <div class="flex items-center justify-center mb-3">
-                        <i class="fa-solid fa-envelope text-brand-red text-3xl"></i>
-                    </div>
-                    <p class="text-center font-semibold text-white text-lg mb-2">Email</p>
-                    <a href="mailto:info@dustysdiesel.com" class="block text-center text-gray-300 hover:text-brand-red transition-colors break-all">
-                        info@dustysdiesel.com
-                    </a>
-                
-
-                <!-- Address Card -->
-                    <div class="flex items-center justify-center mb-3">
-                        <i class="fa-solid fa-location-dot text-brand-red text-3xl"></i>
-                    </div>
-                    <p class="text-center font-semibold text-white text-lg mb-2">Address</p>
-                    <a href="https://maps.google.com/?q=8305+W.+McKee+Industrial+Rd,+Davis,+OK+73030"
-                       target="_blank" rel="noopener noreferrer"
-                       class="block text-center text-gray-300 hover:text-brand-red transition-colors">
-                        8305 W. McKee Industrial Rd<br>Davis, OK 73030
-                    </a>
+                <!-- Email -->
+                <div>
+                    <label class="block text-gray-300 mb-2 font-medium">Email</label>
+                    <input type="email" name="email" required
+                           class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
                 </div>
 
-                <!-- Business Hours Card -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700">
-                    <div class="flex items-center justify-center mb-4">
-                        <i class="fa-solid fa-clock text-brand-red text-3xl"></i>
-                    </div>
-                    <p class="text-center font-semibold text-white text-lg mb-4">Business Hours</p>
-                    <div class="space-y-2">
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg">
-                            <span class="text-gray-300 font-medium">Monday</span>
-                            <span class="text-white">8 AM – 6 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg">
-                            <span class="text-gray-300 font-medium">Tuesday</span>
-                            <span class="text-white">8 AM – 6 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg">
-                            <span class="text-gray-300 font-medium">Wednesday</span>
-                            <span class="text-white">8 AM – 4 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg">
-                            <span class="text-gray-300 font-medium">Thursday</span>
-                            <span class="text-white">8 AM – 6 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg">
-                            <span class="text-gray-300 font-medium">Friday</span>
-                            <span class="text-white">8 AM – 5 PM</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg opacity-50">
-                            <span class="text-gray-400 font-medium">Saturday</span>
-                            <span class="text-gray-400">Closed</span>
-                        </div>
-                        <div class="flex justify-between items-center px-4 py-2 bg-gray-900 rounded-lg opacity-50">
-                            <span class="text-gray-400 font-medium">Sunday</span>
-                            <span class="text-gray-400">Closed</span>
-                        </div>
-                    </div>
+                <!-- Phone -->
+                <div>
+                    <label class="block text-gray-300 mb-2 font-medium">Phone</label>
+                    <input type="text" name="phone"
+                           class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
                 </div>
 
-                <!-- Yelp Card -->
-                <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 hover:border-brand-red transition-all duration-300 transform hover:scale-105">
-                    <div class="flex items-center justify-center mb-3">
-                        <i class="fa-brands fa-yelp text-brand-red text-3xl"></i>
+                <!-- Bin File Upload -->
+                <div>
+                    <label class="block text-gray-300 mb-2 font-medium">Upload BIN File (optional)</label>
+                    <input type="file" name="binfile" accept=".bin"
+                           class="custom-file-input">
+                    <p class="mt-2 text-sm text-gray-500">Upload your ECU bin file for tuning services</p>
+                </div>
+
+                <!-- Message - Full Width -->
+                <div class="md:col-span-2">
+                    <label class="block text-gray-300 mb-2 font-medium">How can we help?</label>
+                    <textarea name="message" rows="5" required
+                              class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red"></textarea>
+                </div>
+
+                <!-- Button - Full Width -->
+                <div class="md:col-span-2">
+                    <button type="submit"
+                            style="border-color:white; border-width:0.2rem;" 
+                            class="w-full py-3 px-6 text-lg font-semibold bg-brand-red text-white rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact Info and Hours - Side by Side -->
+        <div class="grid gap-12 md:grid-cols-2">
+
+            <!-- LEFT: Contact Info -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-8">Get in Touch</h2>
+
+                <div class="space-y-6">
+                    <!-- Phone -->
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-phone text-brand-red text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-lg">Phone</p>
+                            <a href="tel:+19189733545" class="text-gray-300 hover:text-brand-red transition-colors">
+                                +1 (918) 973-3545
+                            </a>
+                        </div>
                     </div>
-                    <p class="text-center font-semibold text-white text-lg mb-3">Message Us on Yelp</p>
-                    <a href="https://www.yelp.com/biz/dustys-diesel-davis" 
-                       target="_blank" rel="noopener noreferrer"
-                       class="block w-full py-3 px-6 text-center font-semibold bg-brand-red text-white rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-300">
-                        Visit Our Yelp Page
-                    </a>
+
+                    <!-- Email -->
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-brand-red text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-lg">Email</p>
+                            <a href="mailto:info@dustysdiesel.com" class="text-gray-300 hover:text-brand-red transition-colors">
+                                info@dustysdiesel.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-location-dot text-brand-red text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-lg">Address</p>
+                            <a href="https://maps.google.com/?q=8305+W.+McKee+Industrial+Rd,+Davis,+OK+73030"
+                               target="_blank" rel="noopener noreferrer"
+                               class="text-gray-300 hover:text-brand-red transition-colors">
+                                8305 W. McKee Industrial Rd<br>Davis, OK 73030
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Yelp -->
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-yelp text-brand-red text-2xl mr-4 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-lg mb-2">Message Us on Yelp</p>
+                            <a href="https://www.yelp.com/biz/dustys-diesel-davis" 
+                               target="_blank" rel="noopener noreferrer"
+                               class="inline-block py-2 px-4 font-semibold bg-brand-red text-white rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-300">
+                                Visit Our Yelp Page
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- RIGHT: Contact Form -->
-<div id="quote" class="bg-gray-800 p-10 rounded-2xl shadow-xl border border-gray-700">
-    <h2 class="text-3xl font-extrabold text-white tracking-tight">Request a Quote</h2>
-    <p class="mt-4 text-gray-400 text-lg">
-        Tell us what's going on with your truck and we'll get back to you quickly.
-    </p>
-
-    <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data" class="mt-10 space-y-6">
-
-        <!-- Name -->
-        <div>
-            <label class="block text-gray-300 mb-2 font-medium">Name</label>
-            <input type="text" name="name" required
-                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
-        </div>
-
-        <!-- Email -->
-        <div>
-            <label class="block text-gray-300 mb-2 font-medium">Email</label>
-            <input type="email" name="email" required
-                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
-        </div>
-
-        <!-- Phone -->
-        <div>
-            <label class="block text-gray-300 mb-2 font-medium">Phone</label>
-            <input type="text" name="phone"
-                   class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red">
-        </div>
-
-        <!-- Message -->
-        <div>
-            <label class="block text-gray-300 mb-2 font-medium">How can we help?</label>
-            <textarea name="message" rows="5" required
-                      class="w-full p-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-brand-red focus:ring-brand-red"></textarea>
-        </div>
-
-        <!-- Bin File Upload -->
-        <div>
-            <label class="block text-gray-300 mb-2 font-medium">Upload BIN File (optional)</label>
-            <input type="file" name="binfile" accept=".bin"
-       class="custom-file-input">
-            <p class="mt-2 text-sm text-gray-500">Upload your ECU bin file for tuning services</p>
-        </div>
-
-        <!-- Button -->
-      <button type="submit"
-   style="border-color:white; border-width:0.2rem;" class="w-full py-3 px-6 text-lg font-semibold bg-brand-red text-white rounded-lg shadow-lg hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
-    Submit
-</button>
+            <!-- RIGHT: Business Hours -->
+            <div class="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
+                <div class="flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-clock text-brand-red text-4xl"></i>
+                </div>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight text-center mb-8">Business Hours</h2>
+                
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg">
+                        <span class="text-gray-300 font-medium">Monday</span>
+                        <span class="text-white">8 AM – 6 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg">
+                        <span class="text-gray-300 font-medium">Tuesday</span>
+                        <span class="text-white">8 AM – 6 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg">
+                        <span class="text-gray-300 font-medium">Wednesday</span>
+                        <span class="text-white">8 AM – 4 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg">
+                        <span class="text-gray-300 font-medium">Thursday</span>
+                        <span class="text-white">8 AM – 6 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg">
+                        <span class="text-gray-300 font-medium">Friday</span>
+                        <span class="text-white">8 AM – 5 PM</span>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg opacity-50">
+                        <span class="text-gray-400 font-medium">Saturday</span>
+                        <span class="text-gray-400">Closed</span>
+                    </div>
+                    <div class="flex justify-between items-center px-4 py-3 bg-gray-900 rounded-lg opacity-50">
+                        <span class="text-gray-400 font-medium">Sunday</span>
+                        <span class="text-gray-400">Closed</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
