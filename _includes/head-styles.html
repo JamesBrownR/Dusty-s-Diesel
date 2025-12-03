@@ -22,8 +22,27 @@ lors from the logo */
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
+  .blog-content ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.25rem;
+}
+
+.blog-content li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+    position: relative;
+}
+
+.blog-content li::before {
+    content: "- ";
+    position: absolute;
+    left: 0;
+    color: var(--brand-red);
+}
   h2 {
-    font-size: 1.875rem; /* 30px */
+    font-size: 3rem; /* 30px */
     font-weight: 700;
     color: #f9fafb; /* Light gray */
     margin-top: 2rem;
@@ -32,7 +51,7 @@ lors from the logo */
 }
 
 h3 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 2rem; /* 24px */
     font-weight: 600;
     color: #f9fafb;
     margin-top: 2rem;
