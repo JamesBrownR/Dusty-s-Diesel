@@ -29,10 +29,10 @@ Many diesel owners explore DPF removal for several reasons:
 
 ### The Legal Reality
 
-Here's the critical part: **DPF deletes are illegal for on-road use in the United States**. The EPA strictly prohibits tampering with emissions control devices on vehicles used on public roads. Violations can result in hefty fines for both vehicle owners and shops that perform the work.
+The important part: **DPF deletes are illegal for on-road use in the United States**. The EPA strictly prohibits tampering with emissions control devices on vehicles used on public roads. Violations can result in hefty fines for both vehicle owners and shops that perform the work.
 
 However, DPF deletes are legal for:
-Off-road only vehicles
+- Off-road only vehicles
 - Racing and competition vehicles
 - Agricultural and farm equipment not used on highways
 - Vehicles exported to countries without such restrictions
@@ -41,10 +41,10 @@ Off-road only vehicles
 
 A proper DPF delete isn't just removing the filter. It typically includes:
 
-1. 1) **Physical Removal**: The DPF canister is removed from the exhaust system
-2. 2) **ECU Tuning**: The engine computer must be reprogrammed to eliminate DPF-related codes and regeneration cycles
-3. 3) **Exhaust Modifications**: Installing delete pipes or straight pipes to replace the DPF section
-4. 4) **Additional Deletes**: Often combined with EGR deletes and DEF system removal for maximum benefit
+1. **Physical Removal**: The DPF canister is removed from the exhaust system
+2. **ECU Tuning**: The engine computer must be reprogrammed to eliminate DPF-related codes and regeneration cycles
+3. **Exhaust Modifications**: Installing delete pipes or straight pipes to replace the DPF section
+4. **Additional Deletes**: Often combined with EGR deletes and DEF system removal for maximum benefit
 
 ### Performance Considerations
 
