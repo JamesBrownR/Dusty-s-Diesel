@@ -29,7 +29,7 @@ Many diesel owners explore DPF removal for several reasons:
 
 ### The Legal Reality
 
-The important part: **DPF deletes are illegal for on-road use in the United States**. The EPA strictly prohibits tampering with emissions control devices on vehicles used on public roads. Violations can result in hefty fines for both vehicle owners and shops that perform the work.
+**DPF deletes are illegal for on-road use in the United States**. The EPA strictly prohibits tampering with emissions control devices on vehicles used on public roads. Violations can result in hefty fines for both vehicle owners and shops that perform the work.
 
 However, DPF deletes are legal for:
 - Off-road only vehicles
