@@ -5,11 +5,11 @@ image: /blog/DPF.webp
 description: "Understanding what a DPF delete is, how it works, and why it’s used in off-road diesel applications."
 ---
 
-## What Is a DPF Delete? Full Breakdown -
+##What Is a DPF Delete? Full Breakdown -
 
 If you're a diesel truck owner, you've probably heard the term "DPF delete" thrown around at the shop or online forums. But what exactly is it, and why do some diesel enthusiasts choose to remove their Diesel Particulate Filter? Let's break it down.
 
-### Understanding the DPF System
+###  Understanding the DPF System
 
 The Diesel Particulate Filter (DPF) is an emissions control device that's been standard on diesel engines since 2007. Its job is to trap and store soot particles from the exhaust to reduce harmful emissions. While this sounds great for the environment, it can create some real-world challenges for diesel truck owners.
 
