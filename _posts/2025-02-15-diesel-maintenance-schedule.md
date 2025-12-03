@@ -187,15 +187,11 @@ Check for:
 
 If your truck is tuned or modified, maintenance becomes even more critical:
 
-**More Frequent Oil Changes**: Every 3,000-4,000 miles. Modified engines work harder and contaminate oil faster.
-
-**Upgraded Cooling**: Monitor coolant condition more frequently. Consider upgraded radiators and thermostats.
-
-**Transmission**: Consider more frequent fluid changes (every 15,000-20,000 miles) and upgraded filters.
-
-**Fuel System**: Use premium diesel and additives. Consider more frequent filter changes.
-
-**Boost System**: Regularly inspect for leaks, check clamps, and ensure intercooler is clean.
+1. **More Frequent Oil Changes**: Every 3,000-4,000 miles. Modified engines work harder and contaminate oil faster.
+2. **Upgraded Cooling**: Monitor coolant condition more frequently. Consider upgraded radiators and thermostats.
+3. **Transmission**: Consider more frequent fluid changes (every 15,000-20,000 miles) and upgraded filters.
+4. **Fuel System**: Use premium diesel and additives. Consider more frequent filter changes.
+5. **Boost System**: Regularly inspect for leaks, check clamps, and ensure the intercooler is clean.
 
 ### The Towing Factor
 
