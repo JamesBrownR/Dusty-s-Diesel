@@ -5,7 +5,7 @@ image: /blog/DPF.webp
 description: "Understanding what a DPF optimization is, how it works, and why it’s used in off-road diesel applications."
 ---
 
-## What Is a DPF Optimization? Full Breakdown -
+## What Is a DPF Optimization? Full Breakdown
 
 If you're a diesel truck owner, you've probably heard the term "DPF optimization" thrown around at the shop or online forums. But what exactly is it, and why do some diesel enthusiasts choose to remove their Diesel Particulate Filter? Let's break it down.
 
