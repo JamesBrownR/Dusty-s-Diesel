@@ -1,0 +1,306 @@
+
+<!-- Organization Schema - Appears on all pages -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "Dusty's Diesel",
+  "image": "{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "telephone": "+19189733545",
+  "email": "dustydieseldoc@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8305 W. McKee Industrial Rd",
+    "addressLocality": "Davis",
+    "addressRegion": "OK",
+    "postalCode": "73030",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.4906295,
+    "longitude": -97.11315139999999
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Thursday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "08:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.4906295,
+      "longitude": -97.11315139999999
+    },
+    "geoRadius": "50000"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "27",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.google.com/maps/place/Dusty's+Diesel/",
+    "https://www.yelp.com/biz/dustys-diesel-davis"
+  ]
+}
+</script>
+
+<!-- Page-specific schema based on page type -->
+{% if page.url == "/" or page.url == "/index.html" %}
+<!-- Home Page - Local Business & Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Diesel Performance Tuning",
+  "provider": {
+    "@type": "AutomotiveBusiness",
+    "name": "Dusty's Diesel"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Davis",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Oklahoma"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Diesel Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance & Dyno Tuning"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Exhaust & Emissions Services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Engine Programming"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endif %}
+
+{% if page.url contains "/services" %}
+<!-- Services Page Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Performance & Dyno Tuning",
+        "description": "Custom ECU tuning, performance parts, and expert Dynojet tuning for diesel trucks",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Dusty's Diesel"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Exhaust & Emissions Services",
+        "description": "Expert service for exhaust systems, including repair, replacements, and emissions system solutions",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Dusty's Diesel"
+        }
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.url contains "/engines" %}
+<!-- Engine Programming Page Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Off-Road Truck Programming",
+  "name": "Heavy-Duty Diesel Engine Programming",
+  "description": "EGR, DPF, SCR optimization and custom engine tuning for Cummins, CAT, Detroit, Paccar, Volvo, Mack, and more",
+  "provider": {
+    "@type": "AutomotiveBusiness",
+    "name": "Dusty's Diesel"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceType": "Remote and In-Person Programming"
+    }
+  }
+}
+</script>
+{% endif %}
+
+{% if page.url contains "/about" %}
+<!-- About Page - Person Schema for Team -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "mainEntity": {
+    "@type": "AutomotiveBusiness",
+    "name": "Dusty's Diesel",
+    "founder": {
+      "@type": "Person",
+      "name": "Dusty",
+      "jobTitle": "Owner & Master Technician",
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Diesel Mechanic",
+        "experienceRequirements": "19 years"
+      }
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Brad",
+        "jobTitle": "Expert Mechanic",
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Diesel Mechanic",
+          "experienceRequirements": "9 years"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Ryan",
+        "jobTitle": "ASE Certified Technician",
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Diesel Mechanic",
+          "experienceRequirements": "20 years"
+        },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "ASE Certification"
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endif %}
+
+{% if page.url contains "/contact" %}
+<!-- Contact Page Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "mainEntity": {
+    "@type": "AutomotiveBusiness",
+    "name": "Dusty's Diesel",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+19189733545",
+      "contactType": "Customer Service",
+      "email": "dustydieseldoc@gmail.com",
+      "availableLanguage": "English",
+      "areaServed": "US"
+    }
+  }
+}
+</script>
+{% endif %}
+
+{% if page.url contains "/blog" and page.title %}
+<!-- Blog Post Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
+  {% if page.image %}
+  "image": "{{ site.url }}{{ page.image }}",
+  {% endif %}
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Dusty's Diesel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dusty's Diesel",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png"
+    }
+  }
+}
+</script>
+{% endif %}
+
+<!-- Breadcrumb Schema -->
+{% if page.url != "/" and page.url != "/index.html" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}{{ site.baseurl }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endif %}
