@@ -3,6 +3,8 @@
   Then include it in your layout file before </head>
 -->
 
+{% assign current_page = page.url | remove: '.html' %}
+
 <!-- Organization Schema - Appears on all pages -->
 <script type="application/ld+json">
 {
@@ -10,10 +12,15 @@
   "@type": "AutomotiveBusiness",
   "name": "Dusty's Diesel",
   "image": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
-  "logo": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png"
+  },
   "url": "{{ site.url }}{{ site.baseurl }}/",
-  "telephone": "+1-918-973-3545",
+  "telephone": "+19189733545",
   "email": "dustydieseldoc@gmail.com",
+  "priceRange": "$$",
+  "description": "Expert diesel performance tuning, repair, and programming services in Davis, OK. Specializing in Cummins, CAT, Detroit, and all major diesel engines.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "8305 W McKee Industrial Rd",
@@ -47,8 +54,13 @@
       "closes": "17:00"
     }
   ],
-  "priceRange": "$",
-  "description": "Expert diesel performance tuning, repair, and programming services in Davis, OK. Specializing in Cummins, CAT, Detroit, and all major diesel engines.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "27",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "areaServed": {
     "@type": "City",
     "name": "Davis",
@@ -57,13 +69,6 @@
       "name": "Oklahoma"
     }
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "27",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "sameAs": [
     "https://www.google.com/maps/place/Dusty's+Diesel/",
     "https://www.yelp.com/biz/dustys-diesel-davis"
@@ -71,10 +76,8 @@
 }
 </script>
 
-<!-- Page-specific schema based on page type -->
-{% assign current_page = page.url | remove: '.html' %}
 {% if current_page == "/" or current_page == "/index" %}
-<!-- Home Page - Local Business & Service Schema -->
+<!-- Home Page - Services List -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,17 +94,7 @@
         "name": "Performance & Dyno Tuning",
         "description": "Custom ECU tuning, performance parts, and expert Dynojet tuning for maximum diesel performance",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel",
-          "telephone": "+1-918-973-3545"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Davis",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Oklahoma"
-          }
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -114,17 +107,7 @@
         "name": "Exhaust & Emissions Services",
         "description": "Expert exhaust system repair, performance exhaust upgrades, DEF and EGR system services",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel",
-          "telephone": "+1-918-973-3545"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Davis",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Oklahoma"
-          }
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -137,17 +120,7 @@
         "name": "Off-Road Truck Engine Programming",
         "description": "EGR, DPF, SCR optimization and horsepower uprates for Cummins, CAT, Detroit Diesel, Paccar, Volvo, Mack, and more",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel",
-          "telephone": "+1-918-973-3545"
-        },
-        "areaServed": {
-          "@type": "City",
-          "name": "Davis",
-          "containedInPlace": {
-            "@type": "State",
-            "name": "Oklahoma"
-          }
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     }
@@ -156,12 +129,13 @@
 </script>
 {% endif %}
 
-{% if page.url contains "/services" %}
+{% if current_page == "/services" %}
 <!-- Services Page Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
+  "name": "Full-Service Diesel Solutions",
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -169,10 +143,9 @@
       "item": {
         "@type": "Service",
         "name": "Performance & Dyno Tuning",
-        "description": "Custom ECU tuning, performance parts, and expert Dynojet tuning for diesel trucks",
+        "description": "Custom ECU tuning, performance parts, and expert Dynojet tuning. Unlock your truck's true power with professional diesel tuning services.",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -182,10 +155,9 @@
       "item": {
         "@type": "Service",
         "name": "Exhaust & Emissions Services",
-        "description": "Expert service for exhaust systems, including repair, replacements, and emissions system solutions",
+        "description": "Expert service for exhaust systems, including repair, full replacements, and emissions system solutions (DEF, EGR). Performance exhaust upgrades available.",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     }
@@ -211,8 +183,7 @@
         "name": "Cummins Engine Programming",
         "description": "ISB, ISC, ISL, ISX programming with EGR, DPF, SCR optimization and HP uprates (2004-2021)",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -224,8 +195,7 @@
         "name": "Caterpillar Engine Programming",
         "description": "C7-C15 programming with EGR, DPF optimization and HP uprates",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -237,8 +207,7 @@
         "name": "Detroit Diesel Programming",
         "description": "Series 60, DD13-DD16 programming with EGR, DPF, SCR optimization (2004-2021)",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -250,8 +219,7 @@
         "name": "Paccar Engine Programming",
         "description": "PX7-9, MX11, MX13 programming with EGR, DPF, SCR optimization (2007-2021)",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     },
@@ -263,8 +231,7 @@
         "name": "Volvo/Mack Engine Programming",
         "description": "MP7, MP8, D11, D12F, D12H, D13, D16 programming (Up to 2017)",
         "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Dusty's Diesel"
+          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
         }
       }
     }
@@ -273,79 +240,33 @@
 </script>
 {% endif %}
 
-{% if page.url contains "/about" %}
-<!-- About Page - Person Schema for Team -->
+{% if current_page == "/about" %}
+<!-- About Page - Team Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "mainEntity": {
-    "@type": "AutomotiveBusiness",
-    "name": "Dusty's Diesel",
-    "founder": {
-      "@type": "Person",
-      "name": "Dusty",
-      "jobTitle": "Owner & Master Technician",
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Diesel Mechanic",
-        "experienceRequirements": "19 years"
-      }
-    },
-    "employee": [
-      {
-        "@type": "Person",
-        "name": "Brad",
-        "jobTitle": "Expert Mechanic",
-        "hasOccupation": {
-          "@type": "Occupation",
-          "name": "Diesel Mechanic",
-          "experienceRequirements": "9 years"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Ryan",
-        "jobTitle": "ASE Certified Technician",
-        "hasOccupation": {
-          "@type": "Occupation",
-          "name": "Diesel Mechanic",
-          "experienceRequirements": "20 years"
-        },
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "ASE Certification"
-        }
-      }
-    ]
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
   }
 }
 </script>
 {% endif %}
 
-{% if page.url contains "/contact" %}
+{% if current_page == "/contact" %}
 <!-- Contact Page Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "mainEntity": {
-    "@type": "AutomotiveBusiness",
-    "name": "Dusty's Diesel",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+19189733545",
-      "contactType": "Customer Service",
-      "email": "dustydieseldoc@gmail.com",
-      "availableLanguage": "English",
-      "areaServed": "US"
-    }
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
   }
 }
 </script>
 {% endif %}
 
-{% if page.url contains "/blog" and page.title %}
+{% if page.layout == "post" and page.title %}
 <!-- Blog Post Schema -->
 <script type="application/ld+json">
 {
@@ -363,19 +284,14 @@
     "name": "Dusty's Diesel"
   },
   "publisher": {
-    "@type": "Organization",
-    "name": "Dusty's Diesel",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png"
-    }
+    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
   }
 }
 </script>
 {% endif %}
 
+{% if current_page != "/" and current_page != "/index" %}
 <!-- Breadcrumb Schema -->
-{% if page.url != "/" and page.url != "/index.html" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
