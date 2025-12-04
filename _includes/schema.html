@@ -1,5 +1,10 @@
+<!-- 
+  Add this to your _includes folder as schema.html
+  Then include it in your layout file before </head>
+-->
 
-{% assign current_page = page.url | remove: '.html' %}
+{% assign current_page = page.url | remove: '.html' | remove: '/' %}
+{% assign page_path = page.url | remove: '.html' %}
 
 <!-- Organization Schema - Appears on all pages -->
 <script type="application/ld+json">
@@ -75,7 +80,7 @@
 }
 </script>
 
-{% if current_page == "/" or current_page == "/index" %}
+{% if current_page == "" or current_page == "index" %}
 <!-- Home Page - Services List -->
 <script type="application/ld+json">
 {
@@ -128,7 +133,7 @@
 </script>
 {% endif %}
 
-{% if current_page == "/services" %}
+{% if current_page == "services" %}
 <!-- Services Page Schema -->
 <script type="application/ld+json">
 {
@@ -165,7 +170,7 @@
 </script>
 {% endif %}
 
-{% if current_page == "https://dustystuned.com/engines/" %}
+{% if current_page == "engines" %}
 <!-- Engine Programming Page Schema -->
 <script type="application/ld+json">
 {
@@ -239,7 +244,7 @@
 </script>
 {% endif %}
 
-{% if current_page == "/about" %}
+{% if current_page == "about" %}
 <!-- About Page - Team Schema -->
 <script type="application/ld+json">
 {
@@ -252,7 +257,7 @@
 </script>
 {% endif %}
 
-{% if current_page == "/contact" %}
+{% if current_page == "contact" %}
 <!-- Contact Page Schema -->
 <script type="application/ld+json">
 {
@@ -289,7 +294,7 @@
 </script>
 {% endif %}
 
-{% if current_page != "/" and current_page != "/index" %}
+{% if current_page != "" and current_page != "index" %}
 <!-- Breadcrumb Schema -->
 <script type="application/ld+json">
 {
