@@ -66,7 +66,7 @@
         });
     }
     
-    // --- Dynamic Gallery Population (HOME PAGE) ---
+  // --- Dynamic Gallery Population (HOME PAGE) ---
     const galleryContainer = document.getElementById('gallery-grid');
     const galleryImages = [
         { src: '{{ site.baseurl }}/Pics/Custom-Diesel-Engine-Build.webp', alt: 'Custom diesel engine build' },
@@ -77,11 +77,29 @@
         { src: '{{ site.baseurl }}/Pics/Custom-Fabrication-Work.webp', alt: 'Custom fabrication work' },
         { src: '{{ site.baseurl }}/Pics/Turbo-Installation.webp', alt: 'Turbo installation' },
         { src: '{{ site.baseurl }}/Pics/Oil-Change.webp', alt: 'Diesel oil change service' },
-        // Add more images if you have them
-        { src: '{{ site.baseurl }}/Pics/Custom-Diesel-Engine-Build.webp', alt: 'Custom diesel engine build' },
-        { src: '{{ site.baseurl }}/Pics/Car-Lift.webp', alt: 'Truck on a service lift' },
-        { src: '{{ site.baseurl }}/Pics/Performance-Tuning-Setup.webp', alt: 'Performance tuning setup' },
-        { src: '{{ site.baseurl }}/Pics/Finished-Custom-Truck-Project.webp', alt: 'Finished custom truck project' },
+        { src: '{{ site.baseurl }}/Pics/2.webp', alt: 'Diesel service work' },
+        { src: '{{ site.baseurl }}/Pics/6.webp', alt: 'Truck maintenance' },
+        { src: '{{ site.baseurl }}/Pics/8.webp', alt: 'Engine repair' },
+        { src: '{{ site.baseurl }}/Pics/10.webp', alt: 'Custom diesel work' },
+        { src: '{{ site.baseurl }}/Pics/15.webp', alt: 'Diesel repair' },
+        { src: '{{ site.baseurl }}/Pics/16.webp', alt: 'Service bay' },
+        { src: '{{ site.baseurl }}/Pics/17.webp', alt: 'Truck service' },
+        { src: '{{ site.baseurl }}/Pics/18.webp', alt: 'Diesel maintenance' },
+        { src: '{{ site.baseurl }}/Pics/19.webp', alt: 'Engine work' },
+        { src: '{{ site.baseurl }}/Pics/20.webp', alt: 'Custom build' },
+        { src: '{{ site.baseurl }}/Pics/21.webp', alt: 'Diesel shop' },
+        { src: '{{ site.baseurl }}/Pics/22.webp', alt: 'Truck repair' },
+        { src: '{{ site.baseurl }}/Pics/23.webp', alt: 'Engine service' },
+        { src: '{{ site.baseurl }}/Pics/24.webp', alt: 'Shop work' },
+        { src: '{{ site.baseurl }}/Pics/25.webp', alt: 'Diesel performance' },
+        { src: '{{ site.baseurl }}/Pics/26.webp', alt: 'Custom work' },
+        { src: '{{ site.baseurl }}/Pics/27.webp', alt: 'Truck maintenance' },
+        { src: '{{ site.baseurl }}/Pics/28.webp', alt: 'Diesel repair work' },
+        { src: '{{ site.baseurl }}/Pics/31.webp', alt: 'Engine build' },
+        { src: '{{ site.baseurl }}/Pics/32.webp', alt: 'Shop service' },
+        { src: '{{ site.baseurl }}/Pics/33.webp', alt: 'Performance work' },
+        { src: '{{ site.baseurl }}/Pics/35.webp', alt: 'Custom diesel' },
+        { src: '{{ site.baseurl }}/Pics/36.webp', alt: 'Truck work' },
     ];
 
     if (galleryContainer) {
@@ -100,7 +118,7 @@
         const lightboxImg = lightbox.querySelector('img');
         const lightboxClose = lightbox.querySelector('.lightbox-close');
 
-        // Function to rendler gallery images
+        // Function to render gallery images
         function renderGalleryImages(count) {
             galleryContainer.innerHTML = '';
             const imagesToShow = galleryImages.slice(0, count);
@@ -184,16 +202,21 @@
     // --- Dynamic Gallery Population (REMOTE TUNING PAGE) ---
     const remoteGalleryContainer = document.getElementById('remote-gallery-grid');
     const remoteGalleryImages = [
-        { src: '{{ site.baseurl }}/Pics/Custom-Diesel-Engine-Build.webp', alt: 'Remote tuning setup' },
-        { src: '{{ site.baseurl }}/Pics/Car-Lift.webp', alt: 'Remote connection screen' },
-        { src: '{{ site.baseurl }}/Pics/Performance-Tuning-Setup.webp', alt: 'ECU tuning remotely' },
-        { src: '{{ site.baseurl }}/Pics/Finished-Custom-Truck-Project.webp', alt: 'Tuned truck results' },
-        { src: '{{ site.baseurl }}/Pics/Suspension-Upgrade.webp', alt: 'Remote diagnostic' },
-        { src: '{{ site.baseurl }}/Pics/Custom-Fabrication-Work.webp', alt: 'TeamViewer session' },
-        { src: '{{ site.baseurl }}/Pics/Turbo-Installation.webp', alt: 'Remote tuning process' },
-        { src: '{{ site.baseurl }}/Pics/Oil-Change.webp', alt: 'Customer satisfied' },
-        { src: '{{ site.baseurl }}/Pics/dyno.webp', alt: 'Dyno results' },
-        { src: '{{ site.baseurl }}/Pics/exhaustsystem.webp', alt: 'Exhaust work' },
+        { src: '{{ site.baseurl }}/Pics/T34.webp', alt: 'Remote ECU tuning session' },
+        { src: '{{ site.baseurl }}/Pics/T30.webp', alt: 'TeamViewer connection' },
+        { src: '{{ site.baseurl }}/Pics/T29.webp', alt: 'Remote diagnostics' },
+        { src: '{{ site.baseurl }}/Pics/T25.webp', alt: 'Tuning software interface' },
+        { src: '{{ site.baseurl }}/Pics/T22.webp', alt: 'Remote tuning process' },
+        { src: '{{ site.baseurl }}/Pics/T20.webp', alt: 'ECU programming remotely' },
+        { src: '{{ site.baseurl }}/Pics/T18.webp', alt: 'Remote tune upload' },
+        { src: '{{ site.baseurl }}/Pics/T17.webp', alt: 'Tuning parameters' },
+        { src: '{{ site.baseurl }}/Pics/T14.webp', alt: 'Remote connection setup' },
+        { src: '{{ site.baseurl }}/Pics/T13.webp', alt: 'Custom tune file' },
+        { src: '{{ site.baseurl }}/Pics/T12.webp', alt: 'Performance tuning remotely' },
+        { src: '{{ site.baseurl }}/Pics/T11.webp', alt: 'ECU flash process' },
+        { src: '{{ site.baseurl }}/Pics/T5.webp', alt: 'Remote diagnostics screen' },
+        { src: '{{ site.baseurl }}/Pics/T4.webp', alt: 'Tuning software' },
+        { src: '{{ site.baseurl }}/Pics/T1.webp', alt: 'Remote tuning completed' },
     ];
 
     if (remoteGalleryContainer) {
