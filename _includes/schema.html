@@ -208,10 +208,14 @@
   "name": "{{ site.title }}",
   "alternateName": "Dusty's Diesel Performance",
   "description": "{{ site.description }}",
-  "url": "{{ site.url }}",
-  "logo": "{{ site.baseurl }}/Pics/favicon.ico",
-  "image": "{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
-  "telephone": "{{ site.phone }}",
+   "image": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png"
+  },
+  "@id": "{{ site.url }}{{ site.baseurl }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+ "telephone": "+19189733545",
   "email": "dustydieseldoc@gmail.com",
   "address": {
     "@type": "PostalAddress",
