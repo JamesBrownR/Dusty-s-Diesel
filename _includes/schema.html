@@ -3,16 +3,18 @@
 {% assign current_page = page.url | remove: '.html' | remove: '/' %}
 {% assign page_path = page.url | remove: '.html' %}
 
+<!-- Add this to _includes/schema.html -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
-  "name": "Dusty's Diesel",
-  "image": "https://yourdomain.com/Pics/Dusty-s-Diesel2.png",
-  "logo": "https://yourdomain.com/Pics/favicon.ico",
-  "@id": "https://yourdomain.com",
-  "url": "https://yourdomain.com",
-  "telephone": "+19189733545",
+  "name": "{{ site.title }}",
+  "image": "{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
+  "logo": "{{ site.baseurl }}/Pics/favicon.ico",
+  "@id": "{{ site.url }}",
+  "url": "{{ site.url }}",
+  "telephone": "{{ site.phone }}",
   "email": "dustydieseldoc@gmail.com",
   "priceRange": "$$",
   "address": {
@@ -156,7 +158,7 @@
       "jobTitle": "Owner & Master Technician",
       "worksFor": {
         "@type": "Organization",
-        "name": "Dusty's Diesel"
+        "name": "{{ site.title }}"
       },
       "knowsAbout": [
         "Diesel Engine Tuning",
@@ -170,7 +172,7 @@
       "jobTitle": "Expert Mechanic",
       "worksFor": {
         "@type": "Organization",
-        "name": "Dusty's Diesel"
+        "name": "{{ site.title }}"
       },
       "knowsAbout": [
         "Diesel Diagnostics",
@@ -183,7 +185,7 @@
       "jobTitle": "ASE Certified Technician",
       "worksFor": {
         "@type": "Organization",
-        "name": "Dusty's Diesel"
+        "name": "{{ site.title }}"
       },
       "knowsAbout": [
         "LS Swaps",
@@ -200,13 +202,13 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Dusty's Diesel",
+  "name": "{{ site.title }}",
   "alternateName": "Dusty's Diesel Performance",
-  "description": "Expert diesel tuning, ECU programming, and performance upgrades in Davis, OK. 19 years of experience with Cummins, Detroit, Paccar, and all major diesel engines.",
-  "url": "https://yourdomain.com",
-  "logo": "https://yourdomain.com/Pics/favicon.ico",
-  "image": "https://yourdomain.com/Pics/Dusty-s-Diesel2.png",
-  "telephone": "+19189733545",
+  "description": "{{ site.description }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.baseurl }}/Pics/favicon.ico",
+  "image": "{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
+  "telephone": "{{ site.phone }}",
   "email": "dustydieseldoc@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -237,9 +239,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Dusty's Diesel",
-  "url": "https://yourdomain.com",
-  "logo": "https://yourdomain.com/Pics/favicon.ico",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.baseurl }}/Pics/favicon.ico",
   "foundingDate": "2006",
   "founders": [
     {
@@ -249,7 +251,7 @@
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+19189733545",
+    "telephone": "{{ site.phone }}",
     "contactType": "customer service",
     "email": "dustydieseldoc@gmail.com",
     "areaServed": "US",
@@ -270,7 +272,7 @@
   "serviceType": "Diesel Performance Tuning",
   "provider": {
     "@type": "AutomotiveBusiness",
-    "name": "Dusty's Diesel",
+    "name": "{{ site.title }}",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "8305 W. McKee Industrial Rd",
@@ -316,8 +318,8 @@
 }
 </script>
 
-<!-- Breadcrumb Schema (Add this to individual pages) -->
-<!-- Example for Services Page -->
+<!-- Breadcrumb Schema - Add page-specific breadcrumbs -->
+{% if page.url != "/" %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -327,19 +329,57 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://yourdomain.com/"
-    },
-    {
+      "item": "{{ site.url }}"
+    }
+    {% if page.url contains "/services" %}
+    ,{
       "@type": "ListItem",
       "position": 2,
       "name": "Services",
-      "item": "https://yourdomain.com/services"
+      "item": "{{ site.url }}{{ page.url }}"
     }
+    {% elsif page.url contains "/engines" %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Truck Programming",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+    {% elsif page.url contains "/contact" %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+    {% elsif page.url contains "/about" %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+    {% elsif page.url contains "/remote-tuning" %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Remote Tuning",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+    {% elsif page.url contains "/blog" %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+    {% endif %}
   ]
 }
 </script>
+{% endif %}
 
-<!-- FAQ Schema (if you add an FAQ section) -->
+<!-- FAQ Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
