@@ -60,25 +60,95 @@ description: From routine maintenance to full custom builds, Dusty's Diesel is y
     </div>
 </section>
 <!--- Authorized For These Brands ---->
-<section class="py-12 bg-gray-800 border-t border-gray-700">
+<section class="py-12 bg-gray-800 border-t border-gray-700 overflow-hidden">
     <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-8">
             <h3 class="text-lg font-semibold text-gray-400 uppercase tracking-wider">Authorized Dealer For</h3>
         </div>
-        <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-80 transition-all duration-500">
-            <div class="w-40 h-auto flex items-center justify-center">
-                <img src="{{ site.baseurl }}/Pics/FASS.webp" alt="FASS Fuel Systems" class="max-h-16 w-auto">
-            </div>
-
-            <div class="w-40 h-auto flex items-center justify-center">
-                <img src="{{ site.baseurl }}/Pics/EZLYNK.webp" alt="EZ Lynk" class="max-h-16 w-auto">
-            </div>
-
-            <div class="w-40 h-auto flex items-center justify-center">
-                <img src="{{ site.baseurl }}/Pics/S&B.webp" alt="S&B Filters" class="max-h-16 w-auto">
+        
+        <!-- Infinite Scrolling Logo Strip -->
+        <div class="relative">
+            <div class="logo-scroll-container">
+                <div class="logo-scroll-track">
+                    <!-- First set of logos -->
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/FASS.webp" alt="FASS Fuel Systems" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/EZLYNK.webp" alt="EZ Lynk" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/S&B.webp" alt="S&B Filters" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/EFIlive.webp" alt="EFI Live" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/HPtuners.webp" alt="HP Tuners" class="max-h-16 w-auto">
+                    </div>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/FASS.webp" alt="FASS Fuel Systems" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/EZLYNK.webp" alt="EZ Lynk" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/S&B.webp" alt="S&B Filters" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/EFIlive.webp" alt="EFI Live" class="max-h-16 w-auto">
+                    </div>
+                    <div class="logo-item">
+                        <img src="{{ site.baseurl }}/Pics/HPtuners.webp" alt="HP Tuners" class="max-h-16 w-auto">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
+    <style>
+        .logo-scroll-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .logo-scroll-track {
+            display: flex;
+            gap: 5rem;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+        }
+        
+        .logo-item {
+            flex-shrink: 0;
+            width: 160px;
+            display: flex;
+            align-items: center;
+            justify-center;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .logo-item:hover {
+            opacity: 1;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Pause animation on hover */
+        .logo-scroll-container:hover .logo-scroll-track {
+            animation-play-state: paused;
+        }
+    </style>
 </section>
 <!-- Why Choose Us -->
 <section class="py-16 sm:py-24 bg-brand-dark animate-on-scroll">
