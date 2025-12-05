@@ -1,30 +1,23 @@
-<!-- 
-  Add this to your _includes folder as schema.html
-  Then include it in your layout file before </head>
--->
+<!-- Add this to your _includes/head-styles.html or in the <head> section of _layouts/default.html -->
 
 {% assign current_page = page.url | remove: '.html' | remove: '/' %}
 {% assign page_path = page.url | remove: '.html' %}
 
-<!-- Organization Schema - Appears on all pages -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
   "name": "Dusty's Diesel",
-  "image": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "{{ site.url }}{{ site.baseurl }}/Pics/Dusty-s-Diesel2.png"
-  },
-  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "image": "https://yourdomain.com/Pics/Dusty-s-Diesel2.png",
+  "logo": "https://yourdomain.com/Pics/favicon.ico",
+  "@id": "https://yourdomain.com",
+  "url": "https://yourdomain.com",
   "telephone": "+19189733545",
   "email": "dustydieseldoc@gmail.com",
   "priceRange": "$$",
-  "description": "Expert diesel performance tuning, repair, and programming services in Davis, OK. Specializing in Cummins, CAT, Detroit, and all major diesel engines.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "8305 W McKee Industrial Rd",
+    "streetAddress": "8305 W. McKee Industrial Rd",
     "addressLocality": "Davis",
     "addressRegion": "OK",
     "postalCode": "73030",
@@ -38,26 +31,36 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Thursday"],
-      "opens": "08:00:00",
-      "closes": "18:00:00"
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Wednesday",
-      "opens": "08:00:00",
-      "closes": "16:00:00"
+      "opens": "08:00",
+      "closes": "16:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "08:00",
+      "closes": "18:00"
     },
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Friday",
-      "opens": "08:00:00",
-      "closes": "17:00:00"
+      "opens": "08:00",
+      "closes": "17:00"
     }
   ],
-  "paymentAccepted": "Cash, Credit Card, Debit Card",
-  "currenciesAccepted": "USD",
-  "hasMap": "https://www.google.com/maps/place/Dusty's+Diesel/@34.4906295,-97.11315139999999,17z/",
+  "sameAs": [
+    "https://www.yelp.com/biz/dustys-diesel-davis",
+    "https://www.google.com/maps/place/Dusty's+Diesel/"
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
@@ -65,237 +68,256 @@
     "bestRating": "5",
     "worstRating": "1"
   },
+  "foundingDate": "2006",
+  "slogan": "Davis, OK's Premier Diesel Performance Shop",
+  "description": "Expert diesel performance tuning, ECU programming, engine builds, and aftermarket upgrades. Specializing in Cummins, Detroit, Paccar, Caterpillar and all major diesel engines. Remote tuning available.",
   "areaServed": {
-    "@type": "City",
-    "name": "Davis",
-    "containedInPlace": {
-      "@type": "State",
-      "name": "Oklahoma"
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 34.4906295,
+      "longitude": -97.11315139999999
+    },
+    "geoRadius": "100000"
+  },
+  "paymentAccepted": "Cash, Credit Card, Debit Card",
+  "currenciesAccepted": "USD",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Diesel Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "ECU Tuning & Performance",
+          "description": "Custom ECU tuning, dyno services, and performance upgrades for diesel trucks"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Off-Road Truck Programming",
+          "description": "EGR, DPF, SCR optimization and custom engine tuning for Cummins, Detroit, Paccar, Caterpillar, and more"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Remote Tuning",
+          "description": "Convenient remote ECU programming via TeamViewer or AnyDesk"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Exhaust & Emissions Services",
+          "description": "Performance exhaust systems, repair, replacement, and emissions diagnostics"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Diesel Engine Diagnostics",
+          "description": "Professional diagnostics for all major diesel engines"
+        }
+      }
+    ]
+  },
+  "knowsAbout": [
+    "Diesel Engine Tuning",
+    "ECU Programming",
+    "Performance Upgrades",
+    "Cummins ISB",
+    "Cummins ISX",
+    "Detroit Diesel DD13",
+    "Detroit Diesel DD15",
+    "Paccar MX13",
+    "Caterpillar C15",
+    "EGR Delete",
+    "DPF Delete",
+    "SCR Systems",
+    "Dyno Tuning",
+    "Remote Tuning",
+    "FASS Fuel Systems",
+    "EZ-Lynk",
+    "S&B Filters",
+    "EFI Live",
+    "HP Tuners"
+  ],
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Dusty",
+      "jobTitle": "Owner & Master Technician",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Dusty's Diesel"
+      },
+      "knowsAbout": [
+        "Diesel Engine Tuning",
+        "ECU Programming",
+        "Performance Diagnostics"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Brad",
+      "jobTitle": "Expert Mechanic",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Dusty's Diesel"
+      },
+      "knowsAbout": [
+        "Diesel Diagnostics",
+        "Engine Repair"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Ryan",
+      "jobTitle": "ASE Certified Technician",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Dusty's Diesel"
+      },
+      "knowsAbout": [
+        "LS Swaps",
+        "Body Work",
+        "Diesel Maintenance"
+      ]
     }
+  ]
+}
+</script>
+
+<!-- Local Business Schema (Alternate Format) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Dusty's Diesel",
+  "alternateName": "Dusty's Diesel Performance",
+  "description": "Expert diesel tuning, ECU programming, and performance upgrades in Davis, OK. 19 years of experience with Cummins, Detroit, Paccar, and all major diesel engines.",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/Pics/favicon.ico",
+  "image": "https://yourdomain.com/Pics/Dusty-s-Diesel2.png",
+  "telephone": "+19189733545",
+  "email": "dustydieseldoc@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8305 W. McKee Industrial Rd",
+    "addressLocality": "Davis",
+    "addressRegion": "OK",
+    "postalCode": "73030",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 34.4906295,
+    "longitude": -97.11315139999999
+  },
+  "hasMap": "https://www.google.com/maps/place/Dusty's+Diesel/@34.4906295,-97.1131514,17z/",
+  "openingHours": [
+    "Mo-Tu 08:00-18:00",
+    "We 08:00-16:00",
+    "Th 08:00-18:00",
+    "Fr 08:00-17:00"
+  ],
+  "priceRange": "$$"
+}
+</script>
+
+<!-- Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Dusty's Diesel",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/Pics/favicon.ico",
+  "foundingDate": "2006",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Dusty"
+    }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+19189733545",
+    "contactType": "customer service",
+    "email": "dustydieseldoc@gmail.com",
+    "areaServed": "US",
+    "availableLanguage": "English"
   },
   "sameAs": [
-    "https://www.google.com/maps/place/Dusty's+Diesel/",
-    "https://www.yelp.com/biz/dustys-diesel-davis"
+    "https://www.yelp.com/biz/dustys-diesel-davis",
+    "https://www.google.com/maps/place/Dusty's+Diesel/"
   ]
 }
 </script>
 
-{% if current_page == "" or current_page == "index" %}
-<!-- Home Page - Services List -->
+<!-- Service Schema for each major service -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Dusty's Diesel Services",
-  "description": "Comprehensive diesel performance and repair services",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Service",
-        "serviceType": "Performance & Dyno Tuning",
-        "name": "Performance & Dyno Tuning",
-        "description": "Custom ECU tuning, performance parts, and expert Dynojet tuning for maximum diesel performance",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Service",
-        "serviceType": "Exhaust & Emissions Services",
-        "name": "Exhaust & Emissions Services",
-        "description": "Expert exhaust system repair, performance exhaust upgrades, DEF and EGR system services",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Service",
-        "serviceType": "Engine Programming",
-        "name": "Off-Road Truck Engine Programming",
-        "description": "EGR, DPF, SCR optimization and horsepower uprates for Cummins, CAT, Detroit Diesel, Paccar, Volvo, Mack, and more",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
+  "@type": "Service",
+  "serviceType": "Diesel Performance Tuning",
+  "provider": {
+    "@type": "AutomotiveBusiness",
+    "name": "Dusty's Diesel",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8305 W. McKee Industrial Rd",
+      "addressLocality": "Davis",
+      "addressRegion": "OK",
+      "postalCode": "73030"
     }
-  ]
-}
-</script>
-{% endif %}
-
-{% if current_page == "services" %}
-<!-- Services Page Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Full-Service Diesel Solutions",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Service",
-        "name": "Performance & Dyno Tuning",
-        "description": "Custom ECU tuning, performance parts, and expert Dynojet tuning. Unlock your truck's true power with professional diesel tuning services.",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Service",
-        "name": "Exhaust & Emissions Services",
-        "description": "Expert service for exhaust systems, including repair, full replacements, and emissions system solutions (DEF, EGR). Performance exhaust upgrades available.",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    }
-  ]
-}
-</script>
-{% endif %}
-
-{% if current_page == "engines" %}
-<!-- Engine Programming Page Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Supported Engine Programming Services",
-  "description": "Off-road truck programming for all major heavy-duty diesel engines",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "item": {
-        "@type": "Service",
-        "name": "Cummins Engine Programming",
-        "description": "ISB, ISC, ISL, ISX programming with EGR, DPF, SCR optimization and HP uprates (2004-2021)",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "item": {
-        "@type": "Service",
-        "name": "Caterpillar Engine Programming",
-        "description": "C7-C15 programming with EGR, DPF optimization and HP uprates",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "item": {
-        "@type": "Service",
-        "name": "Detroit Diesel Programming",
-        "description": "Series 60, DD13-DD16 programming with EGR, DPF, SCR optimization (2004-2021)",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "item": {
-        "@type": "Service",
-        "name": "Paccar Engine Programming",
-        "description": "PX7-9, MX11, MX13 programming with EGR, DPF, SCR optimization (2007-2021)",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "item": {
-        "@type": "Service",
-        "name": "Volvo/Mack Engine Programming",
-        "description": "MP7, MP8, D11, D12F, D12H, D13, D16 programming (Up to 2017)",
-        "provider": {
-          "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-        }
-      }
-    }
-  ]
-}
-</script>
-{% endif %}
-
-{% if current_page == "about" %}
-<!-- About Page - Team Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "mainEntity": {
-    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-  }
-}
-</script>
-{% endif %}
-
-{% if current_page == "contact" %}
-<!-- Contact Page Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  "mainEntity": {
-    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
-  }
-}
-</script>
-{% endif %}
-
-{% if page.layout == "post" and page.title %}
-<!-- Blog Post Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{{ page.title }}",
-  "description": "{{ page.description | default: page.excerpt | strip_html | truncate: 160 }}",
-  {% if page.image %}
-  "image": "{{ site.url }}{{ page.image }}",
-  {% endif %}
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
-  "author": {
-    "@type": "Organization",
-    "name": "Dusty's Diesel"
   },
-  "publisher": {
-    "@id": "{{ site.url }}{{ site.baseurl }}/#organization"
+  "areaServed": {
+    "@type": "State",
+    "name": "Oklahoma"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Diesel Tuning Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "ECU Tuning",
+          "description": "Custom ECU tuning for maximum performance and efficiency"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Dyno Testing",
+          "description": "Professional Dynojet testing and optimization"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Remote Tuning",
+          "description": "Convenient remote ECU programming service"
+        }
+      }
+    ]
   }
 }
 </script>
-{% endif %}
 
-{% if current_page != "" and current_page != "index" %}
-<!-- Breadcrumb Schema -->
+<!-- Breadcrumb Schema (Add this to individual pages) -->
+<!-- Example for Services Page -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -305,15 +327,56 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "{{ site.url }}{{ site.baseurl }}/"
+      "item": "https://yourdomain.com/"
     },
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "{{ page.title }}",
-      "item": "{{ site.url }}{{ page.url }}"
+      "name": "Services",
+      "item": "https://yourdomain.com/services"
     }
   ]
 }
 </script>
-{% endif %}
+
+<!-- FAQ Schema (if you add an FAQ section) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What diesel engines do you tune?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We tune all major diesel engines including Cummins (ISB, ISC, ISL, ISX), Detroit Diesel (DD13, DD15, DD16), Paccar (MX11, MX13), Caterpillar (C7-C15), MaxxForce, Volvo/Mack, Isuzu, Mercedes-Benz, and Hino."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer remote tuning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We offer convenient remote tuning services via TeamViewer or AnyDesk. You can get your truck tuned from anywhere without visiting our shop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does ECU tuning take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most ECU tuning can be completed in 1-3 hours depending on the complexity. Remote tuning sessions typically take 30-60 minutes once connected."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are you located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're located at 8305 W. McKee Industrial Rd in Davis, OK 73030. We're open Monday-Tuesday 8AM-6PM, Wednesday 8AM-4PM, Thursday 8AM-6PM, and Friday 8AM-5PM."
+      }
+    }
+  ]
+}
+</script>
