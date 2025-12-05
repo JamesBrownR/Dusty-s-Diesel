@@ -1,4 +1,4 @@
-<!---  javascr--->
+<!---  javascript --->
 
 <script>
 
@@ -13,7 +13,7 @@
     function handleScroll() {
         const scrollPosition = window.scrollY;
         
-        // If scrolled downm more than 50px, add 'scrolled' class
+        // If scrolled down more than 50px, add 'scrolled' class
         if (scrollPosition > 35) {
             header.classList.add('scrolled');
             navContainer.classList.add('scrolled');
@@ -66,7 +66,7 @@
         });
     }
     
-    // --- Dynamic Gallery Population ---
+    // --- Dynamic Gallery Population (HOME PAGE) ---
     const galleryContainer = document.getElementById('gallery-grid');
     const galleryImages = [
         { src: '{{ site.baseurl }}/Pics/Custom-Diesel-Engine-Build.webp', alt: 'Custom diesel engine build' },
@@ -77,22 +77,18 @@
         { src: '{{ site.baseurl }}/Pics/Custom-Fabrication-Work.webp', alt: 'Custom fabrication work' },
         { src: '{{ site.baseurl }}/Pics/Turbo-Installation.webp', alt: 'Turbo installation' },
         { src: '{{ site.baseurl }}/Pics/Oil-Change.webp', alt: 'Diesel oil change service' },
+        // Add more images if you have them
+        { src: '{{ site.baseurl }}/Pics/Custom-Diesel-Engine-Build.webp', alt: 'Custom diesel engine build' },
+        { src: '{{ site.baseurl }}/Pics/Car-Lift.webp', alt: 'Truck on a service lift' },
+        { src: '{{ site.baseurl }}/Pics/Performance-Tuning-Setup.webp', alt: 'Performance tuning setup' },
+        { src: '{{ site.baseurl }}/Pics/Finished-Custom-Truck-Project.webp', alt: 'Finished custom truck project' },
     ];
 
     if (galleryContainer) {
-        galleryImages.forEach(image => {
-            const card = document.createElement('div');
-            card.className = 'gallery-card relative group';
-            
-            card.innerHTML = `
-                <div class="overflow-hidden">
-                    <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-all duration-500 ease-in-out group-hover:scale-110 cursor-pointer">
-                </div>
-            `;
-            galleryContainer.appendChild(card);
-        });
-    
-        // Create lightbox modal
+        const initialGalleryCount = 8;
+        let currentGalleryCount = initialGalleryCount;
+        
+        // Create lightbox modal once
         const lightbox = document.createElement('div');
         lightbox.className = 'lightbox';
         lightbox.innerHTML = `
@@ -103,6 +99,54 @@
 
         const lightboxImg = lightbox.querySelector('img');
         const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+        // Function to render gallery images
+        function renderGalleryImages(count) {
+            galleryContainer.innerHTML = '';
+            const imagesToShow = galleryImages.slice(0, count);
+            
+            imagesToShow.forEach(image => {
+                const card = document.createElement('div');
+                card.className = 'gallery-card relative group';
+                
+                card.innerHTML = `
+                    <div class="overflow-hidden">
+                        <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-all duration-500 ease-in-out group-hover:scale-110 cursor-pointer">
+                    </div>
+                `;
+                galleryContainer.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderGalleryImages(currentGalleryCount);
+
+        // Show More button for gallery (only on home page)
+        const showMoreGalleryBtn = document.getElementById('show-more-gallery');
+        const showLessGalleryBtn = document.getElementById('show-less-gallery');
+        
+        if (showMoreGalleryBtn) {
+            showMoreGalleryBtn.addEventListener('click', () => {
+                currentGalleryCount = galleryImages.length;
+                renderGalleryImages(currentGalleryCount);
+                showMoreGalleryBtn.classList.add('hidden');
+                if (showLessGalleryBtn) showLessGalleryBtn.classList.remove('hidden');
+            });
+        }
+        
+        if (showLessGalleryBtn) {
+            showLessGalleryBtn.addEventListener('click', () => {
+                currentGalleryCount = initialGalleryCount;
+                renderGalleryImages(currentGalleryCount);
+                showLessGalleryBtn.classList.add('hidden');
+                if (showMoreGalleryBtn) showMoreGalleryBtn.classList.remove('hidden');
+                // Scroll back to gallery section
+                const gallerySection = document.getElementById('gallery');
+                if (gallerySection) {
+                    gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
 
         // Add click event to all gallery images
         galleryContainer.addEventListener('click', (e) => {
@@ -136,8 +180,120 @@
             }
         });
     }
+
+    // --- Dynamic Gallery Population (REMOTE TUNING PAGE) ---
+    const remoteGalleryContainer = document.getElementById('remote-gallery-grid');
+    const remoteGalleryImages = [
+        { src: '{{ site.baseurl }}/Pics/Custom-Diesel-Engine-Build.webp', alt: 'Remote tuning setup' },
+        { src: '{{ site.baseurl }}/Pics/Car-Lift.webp', alt: 'Remote connection screen' },
+        { src: '{{ site.baseurl }}/Pics/Performance-Tuning-Setup.webp', alt: 'ECU tuning remotely' },
+        { src: '{{ site.baseurl }}/Pics/Finished-Custom-Truck-Project.webp', alt: 'Tuned truck results' },
+        { src: '{{ site.baseurl }}/Pics/Suspension-Upgrade.webp', alt: 'Remote diagnostic' },
+        { src: '{{ site.baseurl }}/Pics/Custom-Fabrication-Work.webp', alt: 'TeamViewer session' },
+        { src: '{{ site.baseurl }}/Pics/Turbo-Installation.webp', alt: 'Remote tuning process' },
+        { src: '{{ site.baseurl }}/Pics/Oil-Change.webp', alt: 'Customer satisfied' },
+        { src: '{{ site.baseurl }}/Pics/dyno.webp', alt: 'Dyno results' },
+        { src: '{{ site.baseurl }}/Pics/exhaustsystem.webp', alt: 'Exhaust work' },
+    ];
+
+    if (remoteGalleryContainer) {
+        const initialRemoteGalleryCount = 8;
+        let currentRemoteGalleryCount = initialRemoteGalleryCount;
+        
+        // Create lightbox modal for remote gallery
+        const remoteLightbox = document.createElement('div');
+        remoteLightbox.className = 'lightbox';
+        remoteLightbox.innerHTML = `
+            <span class="lightbox-close">&times;</span>
+            <img src="" alt="">
+        `;
+        document.body.appendChild(remoteLightbox);
+
+        const remoteLightboxImg = remoteLightbox.querySelector('img');
+        const remoteLightboxClose = remoteLightbox.querySelector('.lightbox-close');
+
+        // Function to render remote gallery images
+        function renderRemoteGalleryImages(count) {
+            remoteGalleryContainer.innerHTML = '';
+            const imagesToShow = remoteGalleryImages.slice(0, count);
+            
+            imagesToShow.forEach(image => {
+                const card = document.createElement('div');
+                card.className = 'gallery-card relative group';
+                
+                card.innerHTML = `
+                    <div class="overflow-hidden">
+                        <img src="${image.src}" alt="${image.alt}" class="w-full h-auto aspect-video object-cover transition-all duration-500 ease-in-out group-hover:scale-110 cursor-pointer">
+                    </div>
+                `;
+                remoteGalleryContainer.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderRemoteGalleryImages(currentRemoteGalleryCount);
+
+        // Show More button for remote gallery
+        const showMoreRemoteGalleryBtn = document.getElementById('show-more-remote-gallery');
+        const showLessRemoteGalleryBtn = document.getElementById('show-less-remote-gallery');
+        
+        if (showMoreRemoteGalleryBtn) {
+            showMoreRemoteGalleryBtn.addEventListener('click', () => {
+                currentRemoteGalleryCount = remoteGalleryImages.length;
+                renderRemoteGalleryImages(currentRemoteGalleryCount);
+                showMoreRemoteGalleryBtn.classList.add('hidden');
+                showLessRemoteGalleryBtn.classList.remove('hidden');
+            });
+        }
+        
+        if (showLessRemoteGalleryBtn) {
+            showLessRemoteGalleryBtn.addEventListener('click', () => {
+                currentRemoteGalleryCount = initialRemoteGalleryCount;
+                renderRemoteGalleryImages(currentRemoteGalleryCount);
+                showLessRemoteGalleryBtn.classList.add('hidden');
+                showMoreRemoteGalleryBtn.classList.remove('hidden');
+                // Scroll back to gallery section
+                const remoteGallerySection = document.getElementById('remote-gallery');
+                if (remoteGallerySection) {
+                    remoteGallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+
+        // Add click event to all remote gallery images
+        remoteGalleryContainer.addEventListener('click', (e) => {
+            if (e.target.tagName === 'IMG') {
+                remoteLightbox.classList.add('active');
+                remoteLightboxImg.src = e.target.src;
+                remoteLightboxImg.alt = e.target.alt;
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close remote lightbox
+        remoteLightboxClose.addEventListener('click', () => {
+            remoteLightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close on background click
+        remoteLightbox.addEventListener('click', (e) => {
+            if (e.target === remoteLightbox) {
+                remoteLightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && remoteLightbox.classList.contains('active')) {
+                remoteLightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
                           
-    // --- Dynamic Review Population ---
+    // --- Dynamic Review Population (FIXED) ---
     const reviewsContainer = document.getElementById('reviews-container');
     const showMoreBtn = document.getElementById('show-more-reviews');
     const showLessBtn = document.getElementById('show-less-reviews');
@@ -311,7 +467,7 @@
         });
     }
 
-    // Initial render - show only 4 reviews
+    // Initial render - show only 6 reviews
     renderReviews(initialReviewCount);
     
     // Show More button
