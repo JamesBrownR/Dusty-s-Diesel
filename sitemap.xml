@@ -8,7 +8,6 @@
     <loc>{{ site.url }}{{ site.baseurl }}/</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   
   <!-- Services Page -->
@@ -16,7 +15,6 @@
     <loc>{{ site.url }}{{ site.baseurl }}/services</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
   
   <!-- Engine Programming Page -->
@@ -24,7 +22,13 @@
     <loc>{{ site.url }}{{ site.baseurl }}/engines</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+  </url>
+  
+  <!-- Remote Tuning Page -->
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/remote-tuning</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
   
   <!-- About Page -->
@@ -32,7 +36,6 @@
     <loc>{{ site.url }}{{ site.baseurl }}/about</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   
   <!-- Contact Page -->
@@ -40,7 +43,6 @@
     <loc>{{ site.url }}{{ site.baseurl }}/contact</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   
   <!-- Blog Page -->
@@ -48,7 +50,6 @@
     <loc>{{ site.url }}{{ site.baseurl }}/blog</loc>
     <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
   
   <!-- Blog Posts -->
@@ -61,7 +62,6 @@
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     {% endif %}
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   {% endfor %}
   
