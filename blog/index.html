@@ -75,7 +75,7 @@ description: Read the latest articles, guides, and updates from Dusty's Diesel. 
                         {{ post.excerpt | strip_html | truncate: 150 }}
                     </p>
 
-                    <a href="{{ post.url }}"
+                    <a href="{{ post.url | strip_html }}"
                        class="inline-block mt-6 text-brand-red font-semibold text-lg hover:text-opacity-80 transition-colors">
                         Read More →
                     </a>
