@@ -19,6 +19,7 @@ yelp_url: "https://www.yelp.com/biz/dustys-diesel-davis"
 # Build settings
 markdown: kramdown
 permalink: pretty
+permalink: /:year/:month/:day/:title/
 exclude:
   - README.md
   - Gemfile
