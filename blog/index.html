@@ -48,8 +48,8 @@ description: Read the latest articles, guides, and updates from Dusty's Diesel. 
                 
                 <!-- Feature Image -->
                 {% if post.image %}
-                <a href="{{ post.url | relative_url }}">
-                    <img src="{{ post.image | relative_url }}" class="w-full h-56 object-cover" alt="{{ post.title }}">
+                <a href="{{ post.url }}">
+                    <img src="{{ post.image }}" class="w-full h-56 object-cover" alt="{{ post.title }}">
                 </a>
                 {% else %}
                 <div class="w-full h-56 bg-gray-700 flex items-center justify-center text-gray-400 text-lg">
@@ -60,7 +60,7 @@ description: Read the latest articles, guides, and updates from Dusty's Diesel. 
                 <!-- Content -->
                 <div class="p-8">
                     <h3 class="text-2xl font-bold text-white leading-tight">
-                        <a href="{{ post.url | relative_url }}" class="hover:text-brand-red transition-colors">
+                        <a href="{{ post.url }}" class="hover:text-brand-red transition-colors">
                             {{ post.title }}
                         </a>
                     </h3>
@@ -75,7 +75,7 @@ description: Read the latest articles, guides, and updates from Dusty's Diesel. 
                         {{ post.excerpt | strip_html | truncate: 150 }}
                     </p>
 
-                    <a href="{{ post.url | relative_url }}"
+                    <a href="{{ post.url }}"
                        class="inline-block mt-6 text-brand-red font-semibold text-lg hover:text-opacity-80 transition-colors">
                         Read More →
                     </a>
