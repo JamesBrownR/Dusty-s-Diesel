@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "What Is a DPF Optimization? Full Breakdown"
-image: /blog/DPF.webp
 description: "Understanding what a DPF optimization is, how it works, and why it’s used in off-road diesel applications."
+image: /blog/DPF.webp
 ---
 
 ## What Is a DPF Optimization? Full Breakdown
