@@ -10,6 +10,3 @@ Disallow: /_sass/
 
 # Sitemap location
 Sitemap: https://dustystuned.com/sitemap.xml
-
-# Crawl delay (optional - helps prevent server overload)
-Crawl-delay: 1
