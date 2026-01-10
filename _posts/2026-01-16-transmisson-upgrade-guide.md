@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When Your Transmission Can't Handle the Power: Upgrade Guide"
-image: /blog/transmission.webp
+image: /blog/DustysDieselBlog1.webp
 description: "Learn when you need a transmission upgrade, what options exist, and how to choose the right build for your diesel truck."
 ---
 
