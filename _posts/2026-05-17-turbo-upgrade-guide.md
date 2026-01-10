@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Turbo Upgrades for Diesels: Everything You Need to Know"
-image: /blog/turbocharger.webp
+image: /blog/DustysDieselBlog4.webp
 description: "Complete guide to upgrading your diesel turbocharger including selection, installation, and supporting modifications."
 ---
 
