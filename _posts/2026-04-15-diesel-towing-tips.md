@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Heavy Towing with Diesels: How to Do It Right and Avoid Expensive Mistakes"
-image: /blog/towing.webp
+image: /blog/DustysDieselBlog4.webp
 description: "Professional guide to safely towing heavy loads with your diesel truck including preparation, techniques, and critical monitoring."
 ---
 
