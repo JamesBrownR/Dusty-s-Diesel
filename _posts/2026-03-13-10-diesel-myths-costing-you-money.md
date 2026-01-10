@@ -226,4 +226,4 @@ Diesel ownership doesn't have to be complicated, but it does require accurate in
 
 Many myths persist because they contain a kernel of truth, but context matters. What works for a stock daily driver doesn't work for a built competition truck. What worked on old mechanical diesels doesn't apply to modern common rail systems.
 
-**Got questions?**
+**Got questions about diesel myths or false information?** Call Dusty's Diesel at (918) 973-3545 or visit us at 8305 W. McKee Industrial Rd in Davis, OK. We'll give you honest advice based on your truck's actual needs, not marketing hype.
