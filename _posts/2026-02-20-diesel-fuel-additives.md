@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Truth About Diesel Fuel Additives: What Works, What Doesn't"
-image: /blog/fueladditives.webp
+image: /blog/DustysDieselBlog2.webp
 description: "Cut through the marketing hype and learn which diesel fuel additives actually deliver results and which are a waste of money."
 ---
 
