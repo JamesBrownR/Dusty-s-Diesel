@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "10 Diesel Myths That Cost You Money (And What's Actually True)"
-image: /blog/dieselmyths.webp
+image: /blog/DustysDieselBlog3.webp
 description: "Separate fact from fiction with this myth-busting guide to diesel ownership and performance from the experts at Dusty's Diesel."
 ---
 
