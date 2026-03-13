@@ -129,7 +129,8 @@ layout: default
     <div style="border-width: 0.1rem; border-color: white;" class="container p-8 mx-auto max-w-4xl text-center">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             {% if page.cta_highlight %}
-                {{ page.cta_heading | split: page.cta_highlight | first }}<span style="color: var(--brand-red);">{{ page.cta_highlight }}</span>{{ page.cta_heading | split: page.cta_highlight | last }}
+                {% assign parts = page.cta_heading | split: page.cta_highlight %}
+                {{ parts[0] }}<span style="color: var(--brand-red);">{{ page.cta_highlight }}</span>{{ parts[1] }}
             {% else %}
                 {{ page.cta_heading }}
             {% endif %}
