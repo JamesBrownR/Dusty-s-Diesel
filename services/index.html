@@ -1,139 +1,184 @@
 ---
 layout: default
 title: Our Diesel Services | Dusty's Diesel
-description: Explore our full range of diesel services, from performance dyno tuning and engine builds to routine maintenance and exhaust work in Davis, OK.
+description: Explore our full range of diesel services, from performance dyno tuning and engine builds to remote programming, exhaust work, and more in Davis, OK.
 ---
 
-<section class="heroo-section  min-h-[400px] flex items-center justify-center text-center" >
+<!-- Hero -->
+<section class="heroo-section min-h-[400px] flex items-center justify-center text-center">
     <div class="px-4">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tighter hero-title">
             OUR DIESEL SERVICES
         </h1>
         <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-200" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">
-            From the Dyno to the Daily Driver. We have the expertise to keep you on the road and ahead of the pack.
+            From the dyno to the daily driver. We have the expertise to keep you on the road and ahead of the pack.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ site.baseurl }}/contact#quote" class="inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus-ring" style="border-color: #ffffff; border-width: medium;">
                 Get a Quote
             </a>
-            <a href="tel:{{ site.phone }}" class="inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg text-brand-dark bg-white hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black border-2 border-white" style="color: black">
+            <a href="tel:{{ site.phone }}" class="inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg bg-white hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black border-2 border-white" style="color: black;">
                 Call Us Now
             </a>
         </div>
     </div>
 </section>
 
-<section class="py-5 sm:py-32 bg-gray-900">
-    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-            <h2 class="text-xl font-semibold text-brand-red uppercase tracking-wide">WHAT WE DO</h2>
+<!-- Services List -->
+<section class="py-16 bg-brand-dark">
+    <div class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center mb-16">
+            <h2 class="text-xl font-semibold text-brand-red uppercase tracking-wide">What We Do</h2>
             <p class="mt-4 text-4xl sm:text-5xl font-extrabold text-white tracking-tight">FULL-SERVICE DIESEL SOLUTIONS</p>
         </div>
-        <div class="mt-20 grid gap-5 md:grid-cols-2">
-            <div class="service-card">
-                <div class="p-10">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-md bg-brand-red text-white">
-                        <i class="fa-solid fa-gauge-high text-3xl"></i>
-                    </div>
-                    <h3 class="mt-8 text-2xl font-bold text-white">Performance & Dyno Tuning</h3>
-                    <p class="mt-6 text-lg text-gray-400">Unlock your truck's true power with custom ECU tuning, performance parts, and expert Dynojet tuning.</p>
-                    <a href="#tuning" class="mt-8 inline-block text-brand-red text-lg font-medium hover:text-opacity-80 transition-colors">Learn More →</a>
-                </div>
+
+        <!-- Service 1: Performance & Dyno Tuning -->
+        <div class="service-row flex flex-col lg:flex-row items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/dyno.webp" alt="Diesel truck performance and dyno tuning on a Dynojet in Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
             </div>
-            
-            <div class="service-card">
-                <div class="p-10">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-md bg-brand-red text-white">
-                        <i class="fa-solid fa-smog text-3xl"></i>
-                    </div>
-                    <h3 class="mt-8 text-2xl font-bold text-white">Exhaust & Emissions</h3>
-                    <p class="mt-6 text-lg text-gray-400">Expert service for exhaust systems, including repair, full replacements, and emissions system solutions (DEF, EGR).</p>
-                    <a href="#exhaust" class="mt-8 inline-block text-brand-red text-lg font-medium hover:text-opacity-80 transition-colors">Learn More →</a>
-                </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">01</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Performance & Dyno Tuning</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Custom ECU tunes built around your truck and your goals, validated on our in-house Dynojet. More power, better fuel economy, real numbers.</p>
+                <a href="{{ site.baseurl }}/services/performance-dyno-tuning" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
             </div>
-           
         </div>
+
+        <!-- Service 2: Remote Tuning (image right) -->
+        <div class="service-row flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/remote-tuning.webp" alt="Remote diesel ECU tuning via TeamViewer from Dusty's Diesel Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">02</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Remote Tuning</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Can't make it to Davis? We connect via TeamViewer or AnyDesk, read your ECU, and flash a custom tune from anywhere in the country.</p>
+                <a href="{{ site.baseurl }}/remote-tuning" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 3: Engine Programming -->
+        <div class="service-row flex flex-col lg:flex-row items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/engine-programming.webp" alt="Diesel engine ECU programming for Cummins Detroit Paccar Caterpillar" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">03</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Engine Programming</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Cummins, Detroit, Paccar, Caterpillar and more. EGR, DPF, and SCR optimization plus horsepower uprates for all major diesel makes.</p>
+                <a href="{{ site.baseurl }}/engines" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 4: Exhaust & Emissions (image right) -->
+        <div class="service-row flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/exhaustsystem.webp" alt="Diesel truck exhaust and emissions system service in Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">04</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Exhaust & Emissions</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Performance exhaust upgrades, full system installs, exhaust repair, and emissions system solutions including DEF and EGR diagnostics.</p>
+                <a href="{{ site.baseurl }}/services/exhaust-emissions" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 5: Turbo & Injector Upgrades -->
+        <div class="service-row flex flex-col lg:flex-row items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/turbo-injector.webp" alt="Diesel turbo and injector upgrade installation at Dusty's Diesel" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">05</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Turbo & Injector Upgrades</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">We install turbos, upgraded injectors, and supporting fuel system mods to back up your tune and handle the extra power reliably.</p>
+                <a href="{{ site.baseurl }}/services/turbo-injector-upgrades" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 6: Diesel Diagnostics & Repair (image right) -->
+        <div class="service-row flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/diagnostics.webp" alt="Professional diesel engine diagnostics and repair in Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">06</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Diesel Diagnostics & Repair</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Professional fault code diagnostics and hands-on repair for all major diesel engines. We find the real problem and give you an honest answer.</p>
+                <a href="{{ site.baseurl }}/services/diesel-diagnostics-repair" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 7: Transmission Services -->
+        <div class="service-row flex flex-col lg:flex-row items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/transmission.webp" alt="Diesel truck transmission service and rebuild in Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">07</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Transmission Services</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Transmission diagnostics, repair, and rebuilds for diesel trucks. If you are pushing more power, your transmission needs to be able to handle it.</p>
+                <a href="{{ site.baseurl }}/services/transmission-services" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 8: Premium Parts (image right) -->
+        <div class="service-row flex flex-col lg:flex-row-reverse items-center gap-10 mb-20">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/parts.webp" alt="FASS fuel systems S&B filters EZ-Lynk premium diesel parts dealer Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">08</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Premium Parts Sales</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Authorized dealer for FASS Fuel Systems, S&B Filters, and EZ-Lynk. Genuine parts sourced from the brands that diesel builders actually trust.</p>
+                <a href="{{ site.baseurl }}/services/premium-parts" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- Service 9: Fleet & Commercial Trucks -->
+        <div class="service-row flex flex-col lg:flex-row items-center gap-10 mb-4">
+            <div class="w-full lg:w-1/2">
+                <img src="{{ site.baseurl }}/Pics/fleet.webp" alt="Fleet and commercial diesel truck programming and tuning Davis OK" class="rounded-lg w-full h-72 object-cover tilt-hover shadow-2xl">
+            </div>
+            <div class="w-full lg:w-1/2">
+                <span class="text-brand-red text-sm font-semibold uppercase tracking-widest">09</span>
+                <h3 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Fleet & Commercial Trucks</h3>
+                <p class="mt-4 text-gray-400 text-lg leading-relaxed">Semi and commercial diesel programming for Volvo, Mack, MaxxForce, Isuzu, and more. We keep your fleet running and your downtime to a minimum.</p>
+                <a href="{{ site.baseurl }}/services/fleet-commercial" class="mt-6 inline-block px-6 py-3 text-base font-semibold rounded-md text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105">
+                    Learn More &rarr;
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
 
-<section id="tuning" class=" sm:py-24 bg-brand-dark overflow-hidden">
-    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-            <div class="mt-12 lg:mt-0">
-                <img style="margin 2rem 0;" class="rounded-lg shadow-2xl w-full tilt-hover h-auto" src="{{ site.baseurl }}/Pics/dyno.webp" alt="Diesel truck on a Dynojet">
-            </div>
-            <div class="text-left">
-                <div>
-                    <h2 class="sm:text-4xl font-extrabold text-white tracking-tight">
-                        Performance & Dyno Tuning
-                    </h2>
-                    <p class="mt-6 text-lg text-gray-400">
-                        Don't settle for stock. We specialize in safely unleashing the full potential of your diesel engine. Whether you're looking for better towing power, fuel economy, or just want to win at the track, we have the tools and expertise.
-                    </p>
-                    <dl class="mt-8 space-y-6">
-                        <div>
-                            <dt class="text-lg font-semibold text-brand-red flex items-center"><i class="fa-solid fa-microchip w-6 mr-3"></i>Expert ECU Tuning</dt>
-                            <dd class="mt-1 text-base text-gray-400">Custom tunes built for your specific truck and goals. We load and refine tunes to perfection.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-lg font-semibold text-brand-red flex items-center"><i class="fa-solid fa-chart-line w-6 mr-3"></i>Dynojet Services</dt>
-                            <dd class="mt-1 text-base text-gray-400">Our in-house Dynojet allows us to measure your truck's exact power output and provide real-world data to optimize your tune.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-lg font-semibold text-brand-red flex items-center"><i class="fa-solid fa-bolt w-6 mr-3"></i>Performance Upgrades</dt>
-                            <dd class="mt-1 text-base text-gray-400">We install turbos, injectors, fuel systems, and other supporting mods to handle the power.</dd>
-                        </div>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section id="exhaust" style="margin: 0rem 0 2rem 0;" class=" sm:py-24 bg-brand-dark overflow-hidden">
-    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-            <div class="mt-12 lg:mt-0">
-                <img style="margin 2rem 0;" class="rounded-lg shadow-2xl w-full h-auto tilt-hover" src="{{ site.baseurl }}/Pics/exhaustsystem.webp" alt="Diesel truck exhaust system">
-            </div>
-            <div class="text-left">
-                <div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        Exhaust & Emissions Services
-                    </h2>
-                    <p class="mt-6 text-lg text-gray-400">
-                        A restrictive exhaust can choke your engine's performance. We provide comprehensive exhaust and emissions system services, from simple repairs to full performance systems.
-                    </p>
-                    <dl class="mt-8 space-y-6">
-                        <div>
-                            <dt class="text-lg font-semibold text-brand-red flex items-center"><i class="fa-solid fa-wind w-6 mr-3"></i>Performance Exhaust</dt>
-                            <dd class="mt-1 text-base text-gray-400">Upgrade to a high-flow exhaust system for improved sound, better throttle response, and lower EGTs.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-lg font-semibold text-brand-red flex items-center"><i class="fa-solid fa-toolbox w-6 mr-3"></i>Exhaust Repair & Replacement</dt>
-                            <dd class="mt-1 text-base text-gray-400">From a simple muffler replacement to a full system install, we ensure your exhaust is leak-free and secure.</dd>
-                        </div>
-                        <div>
-                            <dt class="text-lg font-semibold text-brand-red flex items-center"><i class="fa-solid fa-fire-extinguisher w-6 mr-3"></i>Emissions System Services</dt>
-                            <dd class="mt-1 text-base text-gray-400">We offer expert diagnostics and solutions for DEF and EGR systems to meet your performance needs.</dd>
-                        </div>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<section class="py-8 px-8 bg-gray-900">
-    <div style = "border-width: 0.1rem; border-color: white;"  class="container p-8 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+<!-- Bottom CTA -->
+<section class="py-16 px-8 bg-gray-900">
+    <div style="border-width: 0.1rem; border-color: white;" class="container p-8 mx-auto max-w-4xl text-center">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            <span style="color:var(--brand-red);">UPGRADE</span> YOUR RIDE.
+            READY TO <span style="color: var(--brand-red);">UPGRADE</span> YOUR RIDE?
         </h2>
         <p class="mt-6 text-xl text-gray-400">
-            You deserve to have the truck of your dreams. Contact Dusty's Diesel to talk to an expert for a fair, honest quote.
+            Talk to an expert and get a fair, honest quote on any of our services.
         </p>
         <a href="{{ site.baseurl }}/contact#quote" class="mt-10 inline-block px-8 py-3 text-lg font-semibold rounded-md shadow-lg text-white bg-brand-red hover:bg-opacity-80 transition-all duration-300 transform hover:scale-105 focus-ring" style="border-color: #ffffff; border-width: medium;">
             Schedule Your Service
